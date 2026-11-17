@@ -205,6 +205,7 @@ namespace Lanternbearers.Cards
                 case "sentinel": d.Sentinel = true; break;
                 case "restricted": d.Restricted = true; break;
                 case "surge": d.Surge = true; break;
+                case "guarded": d.Guarded = true; break;
                 case "doomed": d.Doomed = n; break;
                 case "victory": d.Victory = n; break;
                 case "cannot" when kw.Equals("Cannot have attachments", StringComparison.OrdinalIgnoreCase): d.CannotHaveAttachments = true; break;

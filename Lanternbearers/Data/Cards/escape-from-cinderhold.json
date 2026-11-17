@@ -1,0 +1,539 @@
+[
+  {
+    "Title": "The Pyrelord's Keep",
+    "Slug": "The-Pyrelord's-Keep-LB",
+    "IsUnique": false,
+    "CardType": "Quest",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "StageNumber": "1",
+        "QuestPoints": "9"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Setup: Search the encounter deck for the 3 objective cards and add them to the staging area. Set The Ember Wraith aside, out of play. Shuffle the encounter deck, then reveal 1 encounter card to guard each objective.",
+        "When revealed: Choose 1 of your heroes at random. That hero is taken prisoner: it is out of play and cannot be used until it is rescued.",
+        "You cannot play more than 1 ally card each round.",
+        "You cannot advance to the next stage unless you have at least 1 objective card."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Escape from Cinderhold",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": 1,
+      "StageLetter": null
+    },
+    "Number": 1,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Through the Undercrofts",
+    "Slug": "Through-the-Undercrofts-LB",
+    "IsUnique": false,
+    "CardType": "Quest",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "StageNumber": "2",
+        "QuestPoints": "15"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Response: After any progress is placed on this stage, rescue the prisoner: put the hero back into play with 1 damage on it.",
+        "You cannot play more than 1 ally card each round.",
+        "You cannot advance to the next stage unless you have rescued the prisoner and have all 3 Escape from Cinderhold objective cards."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Escape from Cinderhold",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": 2,
+      "StageLetter": null
+    },
+    "Number": 2,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Flight from Cinderhold",
+    "Slug": "Flight-from-Cinderhold-LB",
+    "IsUnique": false,
+    "CardType": "Quest",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "StageNumber": "3",
+        "QuestPoints": "7"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Forced: At the beginning of each quest phase, put the top card of your deck into play engaged with you as a Dungeon Guard.",
+        "This stage cannot be completed while The Ember Wraith is in play. Complete this stage to win."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Escape from Cinderhold",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": 3,
+      "StageLetter": null
+    },
+    "Number": 3,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Cinderhold Jailer",
+    "Slug": "Cinderhold-Jailer-LB",
+    "IsUnique": false,
+    "CardType": "Enemy",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "EngagementCost": "38",
+        "Threat": "1",
+        "Might": "2",
+        "Guard": "3",
+        "Health": "5",
+        "VictoryPoints": "5"
+      },
+      "Traits": [
+        "Ashen.",
+        "Raider."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Forced: If Cinderhold Jailer is in the staging area after you quest unsuccessfully, shuffle 1 unclaimed objective card from the staging area back into the encounter deck."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Escape from Cinderhold",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 4,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "The Ember Wraith",
+    "Slug": "The-Ember-Wraith-LB",
+    "IsUnique": false,
+    "CardType": "Enemy",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "EngagementCost": "40",
+        "Threat": "5",
+        "Might": "4",
+        "Guard": "3",
+        "Health": "9"
+      },
+      "Traits": [
+        "Wraith."
+      ],
+      "Keywords": [
+        "Cannot have attachments."
+      ],
+      "Text": [
+        "Cannot have attachments.",
+        "Forced: When the prisoner is rescued, move The Ember Wraith into the staging area.",
+        "Forced: After a shadow effect dealt to The Ember Wraith resolves, choose and discard 1 character you control."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Escape from Cinderhold",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 5,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Crypt Warden",
+    "Slug": "Crypt-Warden-LB",
+    "IsUnique": false,
+    "CardType": "Enemy",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "EngagementCost": "8",
+        "Threat": "2",
+        "Might": "2",
+        "Guard": "1",
+        "Health": "2"
+      },
+      "Traits": [
+        "Undead."
+      ],
+      "Keywords": [
+        "Doomed 1."
+      ],
+      "Text": [
+        "Doomed 1."
+      ],
+      "Shadow": "Shadow: Choose and discard 1 attachment you control. Discarded objective cards return to the staging area. (If this attack is undefended, discard all attachments you control.)",
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Escape from Cinderhold",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 6,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Smothering Dark",
+    "Slug": "Smothering-Dark-LB",
+    "IsUnique": false,
+    "CardType": "Treachery",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {},
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "When revealed: Until the end of the phase, raise the total Threat in the staging area by 1."
+      ],
+      "Shadow": "Shadow: Raise your dread by the number of enemies engaged with you.",
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Escape from Cinderhold",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 7,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Iron Fetters",
+    "Slug": "Iron-Fetters-LB",
+    "IsUnique": false,
+    "CardType": "Treachery",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {},
+      "Traits": [
+        "Condition."
+      ],
+      "Keywords": [],
+      "Text": [
+        "When revealed: Attach Iron Fetters to the top of your deck. (Counts as a Condition attachment with the text: \"The next time you would draw 1 or more cards, discard Iron Fetters instead.\")"
+      ],
+      "Shadow": "Shadow: Resolve the \"When revealed\" effect of Iron Fetters.",
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Escape from Cinderhold",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 8,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Winding Undercrofts",
+    "Slug": "Winding-Undercrofts-LB",
+    "IsUnique": false,
+    "CardType": "Location",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "Threat": "1",
+        "QuestPoints": "3"
+      },
+      "Traits": [
+        "Dungeon."
+      ],
+      "Keywords": [
+        "Doomed 1.",
+        "Surge."
+      ],
+      "Text": [
+        "Doomed 1. Surge."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Escape from Cinderhold",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 9,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Keep Gate",
+    "Slug": "Keep-Gate-LB",
+    "IsUnique": false,
+    "CardType": "Location",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "Threat": "2",
+        "QuestPoints": "1"
+      },
+      "Traits": [
+        "Dungeon."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Forced: After you travel to Keep Gate, put the top card of your deck into play engaged with you as a Dungeon Guard."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Escape from Cinderhold",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 10,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Wayfinder's Map",
+    "Slug": "Wayfinder's-Map-LB",
+    "IsUnique": false,
+    "CardType": "Objective",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {},
+      "Traits": [
+        "Item."
+      ],
+      "Keywords": [
+        "Guarded.",
+        "Restricted."
+      ],
+      "Text": [
+        "Guarded. Restricted.",
+        "Action: Raise your dread by 2 to claim this objective when it is free of encounters. When claimed, attach Wayfinder's Map to a hero you control. (Counts as an attachment. If detached, return Wayfinder's Map to the staging area.)",
+        "Attached hero cannot attack or defend."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Escape from Cinderhold",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 11,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Ember Torch",
+    "Slug": "Ember-Torch-LB",
+    "IsUnique": false,
+    "CardType": "Objective",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {},
+      "Traits": [
+        "Item."
+      ],
+      "Keywords": [
+        "Guarded.",
+        "Restricted."
+      ],
+      "Text": [
+        "Guarded. Restricted.",
+        "Action: Raise your dread by 2 to claim this objective when it is free of encounters. When claimed, attach Ember Torch to a hero you control. (Counts as an attachment. If detached, return Ember Torch to the staging area.)",
+        "Forced: At the end of each round, raise your dread by 2."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Escape from Cinderhold",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 12,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Cinder Key",
+    "Slug": "Cinder-Key-LB",
+    "IsUnique": false,
+    "CardType": "Objective",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {},
+      "Traits": [
+        "Item."
+      ],
+      "Keywords": [
+        "Guarded.",
+        "Restricted."
+      ],
+      "Text": [
+        "Guarded. Restricted.",
+        "Action: Raise your dread by 2 to claim this objective when it is free of encounters. When claimed, attach Cinder Key to a hero you control. (Counts as an attachment. If detached, return Cinder Key to the staging area.)",
+        "Forced: At the end of each round, attached hero takes 1 damage."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Escape from Cinderhold",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 13,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Dungeon Guard",
+    "Slug": "Dungeon-Guard-LB",
+    "IsUnique": false,
+    "CardType": "Enemy",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "EngagementCost": "0",
+        "Threat": "0",
+        "Might": "1",
+        "Guard": "1",
+        "Health": "1"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Token: the top card of your deck, acting as an enemy engaged with you. (Not part of the encounter deck. The card is taken face down from your deck and is placed in your discard pile when the guard leaves play.)"
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Escape from Cinderhold",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 14,
+    "Quantity": 0,
+    "Artist": null
+  }
+]

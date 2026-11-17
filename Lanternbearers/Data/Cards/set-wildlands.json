@@ -1,0 +1,313 @@
+[
+  {
+    "Title": "Hound Rider",
+    "Slug": "Hound-Rider-LB",
+    "IsUnique": false,
+    "CardType": "Enemy",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "EngagementCost": "10",
+        "Threat": "1",
+        "Might": "2",
+        "Guard": "0",
+        "Health": "2"
+      },
+      "Traits": [
+        "Raider."
+      ],
+      "Keywords": [
+        "Surge."
+      ],
+      "Text": [
+        "Surge."
+      ],
+      "Shadow": "Shadow: Hound Rider attacks you. You may declare 1 character as a defender. Deal Hound Rider its own shadow card. After combat, return Hound Rider to the top of the encounter deck.",
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "The Wildlands",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 1,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Hill Giant",
+    "Slug": "Hill-Giant-LB",
+    "IsUnique": false,
+    "CardType": "Enemy",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "EngagementCost": "30",
+        "Threat": "1",
+        "Might": "6",
+        "Guard": "3",
+        "Health": "9",
+        "VictoryPoints": "4"
+      },
+      "Traits": [
+        "Giant."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Excess combat damage dealt by Hill Giant (damage beyond the remaining Health of the character it damages) raises your dread instead."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "The Wildlands",
+      "EasyModeQuantity": 1,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 2,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Hillside Archer",
+    "Slug": "Hillside-Archer-LB",
+    "IsUnique": false,
+    "CardType": "Enemy",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "EngagementCost": "48",
+        "Threat": "2",
+        "Might": "2",
+        "Guard": "0",
+        "Health": "2"
+      },
+      "Traits": [
+        "Raider."
+      ],
+      "Keywords": [],
+      "Text": [
+        "During the encounter phase, you cannot optionally engage Hillside Archer while there are other enemies in the staging area.",
+        "Forced: If Hillside Archer is in the staging area at the end of the combat phase, deal 1 damage to 1 character you control."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "The Wildlands",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 3,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Reed Adder",
+    "Slug": "Reed-Adder-LB",
+    "IsUnique": false,
+    "CardType": "Enemy",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "EngagementCost": "40",
+        "Threat": "3",
+        "Might": "4",
+        "Guard": "1",
+        "Health": "7",
+        "VictoryPoints": "3"
+      },
+      "Traits": [
+        "Creature."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Forced: Each time Reed Adder attacks you, raise your dread by 1."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "The Wildlands",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 4,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Hill Wolves",
+    "Slug": "Hill-Wolves-LB",
+    "IsUnique": false,
+    "CardType": "Enemy",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "EngagementCost": "20",
+        "Threat": "2",
+        "Might": "3",
+        "Guard": "1",
+        "Health": "3"
+      },
+      "Traits": [
+        "Creature."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Forced: If Hill Wolves is dealt a shadow card with no effect, return Hill Wolves to the staging area after it attacks."
+      ],
+      "Shadow": "Shadow: The attacking enemy gets +1 Might. (+2 Might instead if this attack is undefended.)",
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "The Wildlands",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 5,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Failing Hope",
+    "Slug": "Failing-Hope-LB",
+    "IsUnique": false,
+    "CardType": "Treachery",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {},
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "When revealed: Remove 4 progress from the current quest."
+      ],
+      "Shadow": "Shadow: The defending character does not count its Guard.",
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "The Wildlands",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 6,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "The Barren Moor",
+    "Slug": "The-Barren-Moor-LB",
+    "IsUnique": false,
+    "CardType": "Location",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "Threat": "5",
+        "QuestPoints": "1"
+      },
+      "Traits": [
+        "Wasteland."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Forced: After you travel to The Barren Moor, place 1 progress on it."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "The Wildlands",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 7,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "The Empty Downs",
+    "Slug": "The-Empty-Downs-LB",
+    "IsUnique": false,
+    "CardType": "Location",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "Threat": "1",
+        "QuestPoints": "6"
+      },
+      "Traits": [
+        "Wasteland."
+      ],
+      "Keywords": [],
+      "Text": [
+        "When you have the option to travel and there is no active location, you must travel to The Empty Downs."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "The Wildlands",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 8,
+    "Quantity": 2,
+    "Artist": null
+  }
+]

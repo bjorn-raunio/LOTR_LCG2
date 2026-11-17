@@ -25,6 +25,7 @@ namespace Lanternbearers.UI
                 CardType.Location => new Color(72, 58, 36),
                 CardType.Treachery => new Color(58, 34, 74),
                 CardType.Quest => new Color(88, 78, 46),
+                CardType.Objective => new Color(30, 62, 70),
                 _ => new Color(50, 50, 50)
             };
         }
@@ -38,6 +39,7 @@ namespace Lanternbearers.UI
                 CardType.Location => new Color(140, 110, 60),
                 CardType.Treachery => new Color(115, 60, 140),
                 CardType.Quest => new Color(185, 160, 90),
+                CardType.Objective => new Color(60, 140, 160),
                 _ => Color.Gray
             };
         }
@@ -219,6 +221,7 @@ namespace Lanternbearers.UI
                 if (c.Progress > 0) info.Add($"Progress {c.Progress}");
                 if (c.Exhausted) info.Add("Exhausted");
                 if (c.Committed) info.Add("Questing");
+                if (e != null && e.IsGuarded(c)) info.Add($"Guarded by {c.GuardedBy.Name}");
                 if (info.Count > 0) { g.Text(g.Medium, string.Join("  |  ", info), new Vector2(r.X + 8, y), new Color(255, 200, 120)); y += g.Medium.LineSpacing; }
                 if (c.Attachments.Count > 0)
                     y = g.TextWrapped(g.Medium, "Attachments: " + string.Join(", ", c.Attachments.Select(a => a.Name)), new Vector2(r.X + 8, y), r.Width - 16, new Color(180, 220, 255));

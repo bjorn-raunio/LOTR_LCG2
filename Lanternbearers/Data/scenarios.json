@@ -2,19 +2,34 @@
   {
     "Name": "The Fenwatch Crossing",
     "EncounterSet": "The Fenwatch Crossing",
-    "Description": "Cross the drowned fens, reach the old watchtower and survive the Mire Hag. (Difficulty: easier)",
-    "SetAside": [
-      "Drowned-Watchtower-LB",
-      "Mire-Hag-LB"
-    ]
+    "Description": "Cross the drowned fens, choose a path through the reeds and face the brood of the Fen Mother. (Difficulty: easier)",
+    "IncludedEncounterSets": [
+      "Fen Spiders",
+      "Ashen Raiders"
+    ],
+    "SetAside": []
   },
   {
     "Name": "The Burning of Harrowmere",
     "EncounterSet": "The Burning of Harrowmere",
-    "Description": "Raiders torch the farmland around Harrowmere. Hold the road, reach the town gate and bring down their Warchief. (Difficulty: harder)",
+    "Description": "Raiders torch the farmland around Harrowmere. Bring down the Hill Giant, hurry down the river road and survive the ambush at the gate. (Difficulty: harder)",
+    "IncludedEncounterSets": [
+      "Ashen Raiders",
+      "The Wildlands",
+      "Gathering Dark"
+    ],
+    "SetAside": []
+  },
+  {
+    "Name": "Escape from Cinderhold",
+    "EncounterSet": "Escape from Cinderhold",
+    "Description": "One of your heroes is held in the dungeons of Cinderhold, the Pyrelord's keep. Recover the three relics, free the prisoner and flee before the Ember Wraith catches you. (Difficulty: hardest)",
+    "IncludedEncounterSets": [
+      "Fen Spiders",
+      "Ashen Raiders"
+    ],
     "SetAside": [
-      "Raider-Warchief-LB",
-      "Harrowmere-Gate-LB"
+      "The-Ember-Wraith-LB"
     ]
   }
 ]

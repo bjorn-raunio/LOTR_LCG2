@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Lanternbearers.Engine
 {
-    public enum CardType { Hero, Ally, Attachment, Event, Enemy, Location, Treachery, Quest }
+    public enum CardType { Hero, Ally, Attachment, Event, Enemy, Location, Treachery, Quest, Objective }
     public enum Sphere { None, Crown, Blade, Sage, Hearth, Neutral }
     public enum Stat { Resolve, Might, Guard, Health, Threat, Engagement, QuestPoints }
     public enum Phase { Setup, Resource, Planning, Quest, Travel, Encounter, Combat, Refresh }
@@ -14,7 +14,13 @@ namespace Lanternbearers.Engine
     public enum Zone
     {
         None, Deck, Hand, Discard, PlayArea, Attached, EncounterDeck, EncounterDiscard,
-        Staging, ActiveLocation, Engaged, Shadow, QuestDeck, ActiveQuest, Victory, SetAside
+        Staging, ActiveLocation, Engaged, Shadow, QuestDeck, ActiveQuest, Victory, SetAside,
+        /// <summary>A condition attached to the top of the player's deck.</summary>
+        OnDeck,
+        /// <summary>An enemy being revealed from the encounter deck, not yet in play.</summary>
+        Revealing,
+        /// <summary>A face-down player card acting as a token enemy (e.g. a Dungeon Guard); out of play.</summary>
+        UnderToken
     }
 
     public enum Trigger
@@ -33,8 +39,15 @@ namespace Lanternbearers.Engine
         AfterDamaged,           // Subject = character that survived damage, Amount = damage dealt
         AfterCharacterLeavesPlay, // Subject = character (now out of play), Destroyed = whether it was destroyed
         AfterEncounterRevealed, // Subject = non-treachery encounter card just put into the staging area
+        EnemyRevealing,         // Subject = enemy being revealed, before it enters play and before its keywords / "when revealed" resolve
         BeforeShadow,           // Subject = shadow card, Enemy = attacker (cancel window)
         EnemyAttacks,           // Subject = attacking enemy, before defenders are declared
+        AfterEnemyAttack,       // Subject = attacking enemy, Attack = the resolved attack
+        EndOfCombatPhase,       // fired at the end of the combat phase
+        QuestPhaseBegins,       // fired at the beginning of the quest phase
+        QuestFailed,            // fired after questing unsuccessfully (threat higher than resolve)
+        AfterQuestProgress,     // Subject = current quest, Amount = progress placed
+        AfterShadowResolved,    // Subject = shadow card, Enemy = attacker (only if it had an effect)
         EndOfRound,             // fired at the end of the refresh phase
     }
 
@@ -47,6 +60,8 @@ namespace Lanternbearers.Engine
         public bool Cancelled;
         public int Amount;
         public bool Destroyed;
+        /// <summary>The subject was in play when the event happened (so its own "after ..." abilities can trigger).</summary>
+        public bool WasInPlay;
     }
 
     public class AttackContext
@@ -56,6 +71,8 @@ namespace Lanternbearers.Engine
         public List<Card> Defenders = new();
         public bool Undefended => Defender == null;
         public bool Cancelled;
+        /// <summary>Shadow cards revealed for this attack (with or without a shadow effect).</summary>
+        public List<Card> Shadows = new();
     }
 
     public class ActionAbility
@@ -109,6 +126,28 @@ namespace Lanternbearers.Engine
         public Func<Card, Card, Sphere, bool> GrantsSphere;
         /// <summary>(engine, source, enemy) -> true if the enemy cannot attack.</summary>
         public Func<GameEngine, Card, Card, bool> PreventsAttack;
+        /// <summary>(engine, source) -> true while the player cannot draw cards.</summary>
+        public Func<GameEngine, Card, bool> PreventsDrawing;
+        /// <summary>Attachment hook: (engine, attachment) -> whether the attached character readies in the refresh phase.</summary>
+        public Func<GameEngine, Card, Task<bool>> RefreshReadyCheck;
+        /// <summary>Location: if there is no active location, the player must travel here.</summary>
+        public bool MustTravel;
+        /// <summary>Enemy: (engine, enemy) -> whether it may be optionally engaged.</summary>
+        public Func<GameEngine, Card, bool> CanOptionallyEngage;
+        /// <summary>Enemy: excess combat damage from its attacks raises dread instead.</summary>
+        public bool ExcessDamageToDread;
+        /// <summary>Quest stage: extra encounter cards revealed in each staging step.</summary>
+        public int ExtraStagingReveals;
+        /// <summary>Quest stage: no engagement checks during the encounter phase.</summary>
+        public bool NoEngagementChecks;
+        /// <summary>Quest stage: if &gt; 0, at most this many allies can be played each round.</summary>
+        public int AllyLimitPerRound;
+        /// <summary>Objective: when it enters the staging area, the next encounter card guards it.</summary>
+        public bool Guarded;
+        /// <summary>A token created by an effect; it is removed from the game instead of being discarded.</summary>
+        public bool Token;
+        /// <summary>(engine, source, character) -> true if the character cannot attack or defend.</summary>
+        public Func<GameEngine, Card, Card, bool> PreventsAttackOrDefend;
 
         // ---- behaviour hooks ----
         public Func<GameEngine, Card, Task> WhenRevealed;
@@ -142,8 +181,14 @@ namespace Lanternbearers.Engine
         public bool FaceDown;
         public int Damage, Resources, Progress;
         public Card AttachedTo;
+        /// <summary>Objective: the encounter card guarding it.</summary>
+        public Card GuardedBy;
+        /// <summary>Token: the face-down card it represents, placed in its owner's discard pile when the token leaves play.</summary>
+        public Card FaceDownCard;
         public readonly List<Card> Attachments = new();
-        public Card ShadowCard;
+        /// <summary>Shadow cards dealt to this enemy (usually 0 or 1).</summary>
+        public readonly List<Card> ShadowCards = new();
+        public Card ShadowCard => ShadowCards.FirstOrDefault();
         public readonly Dictionary<string, int> PhaseCounters = new();
         public readonly Dictionary<string, int> RoundCounters = new();
 
@@ -164,6 +209,13 @@ namespace Lanternbearers.Engine
         public void MarkRound(string key) => RoundCounters[key] = UsedThisRound(key) + 1;
 
         public override string ToString() => Name;
+    }
+
+    /// <summary>A lasting encounter effect that is recalculated as the game state changes (e.g. "each location in the staging area gets +1 Threat until the end of the phase").</summary>
+    public class LastingModifier
+    {
+        public Func<GameEngine, Card, Stat, int> Mod;
+        public Duration Duration;
     }
 
     public class TempModifier

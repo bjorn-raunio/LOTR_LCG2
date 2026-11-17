@@ -1,0 +1,266 @@
+[
+  {
+    "Title": "Ashen Raider",
+    "Slug": "Ashen-Raider-LB",
+    "IsUnique": false,
+    "CardType": "Enemy",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "EngagementCost": "10",
+        "Threat": "2",
+        "Might": "2",
+        "Guard": "0",
+        "Health": "3"
+      },
+      "Traits": [
+        "Ashen.",
+        "Raider."
+      ],
+      "Keywords": [],
+      "Text": [
+        "When revealed: Choose 1 character committed to the quest. Deal 2 damage to that character."
+      ],
+      "Shadow": "Shadow: The attacking enemy gets +1 Might. (+3 Might instead if this attack is undefended.)",
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Ashen Raiders",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 1,
+    "Quantity": 3,
+    "Artist": null
+  },
+  {
+    "Title": "Ashen Chieftain",
+    "Slug": "Ashen-Chieftain-LB",
+    "IsUnique": false,
+    "CardType": "Enemy",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "EngagementCost": "35",
+        "Threat": "2",
+        "Might": "3",
+        "Guard": "3",
+        "Health": "6",
+        "VictoryPoints": "4"
+      },
+      "Traits": [
+        "Ashen.",
+        "Raider."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Ashen Chieftain gets +2 Might for each supply token on it.",
+        "Forced: After Ashen Chieftain attacks, place 1 supply token on it."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Ashen Raiders",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 2,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Ashen Beastmaster",
+    "Slug": "Ashen-Beastmaster-LB",
+    "IsUnique": false,
+    "CardType": "Enemy",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "EngagementCost": "35",
+        "Threat": "2",
+        "Might": "3",
+        "Guard": "1",
+        "Health": "5"
+      },
+      "Traits": [
+        "Ashen.",
+        "Raider."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Forced: When Ashen Beastmaster attacks, deal it 1 additional shadow card."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Ashen Raiders",
+      "EasyModeQuantity": 1,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 3,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Driven by Ash",
+    "Slug": "Driven-by-Ash-LB",
+    "IsUnique": false,
+    "CardType": "Treachery",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {},
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "When revealed: Each enemy and each location currently in the staging area gets +1 Threat until the end of the phase. If there are no cards in the staging area, Driven by Ash gains surge."
+      ],
+      "Shadow": "Shadow: Choose and discard 1 attachment from the defending character. (If this attack is undefended, discard all attachments you control.)",
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Ashen Raiders",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 4,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "The Pyrelord's Reach",
+    "Slug": "The-Pyrelord's-Reach-LB",
+    "IsUnique": false,
+    "CardType": "Treachery",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {},
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "When revealed: Deal 1 damage to each exhausted character."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Ashen Raiders",
+      "EasyModeQuantity": 1,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 5,
+    "Quantity": 3,
+    "Artist": null
+  },
+  {
+    "Title": "Ashen Pass",
+    "Slug": "Ashen-Pass-LB",
+    "IsUnique": false,
+    "CardType": "Location",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "Threat": "3",
+        "QuestPoints": "2"
+      },
+      "Traits": [
+        "Stronghold.",
+        "Ashen."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Travel: Discard 2 cards from your hand at random to travel here."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Ashen Raiders",
+      "EasyModeQuantity": 1,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 6,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Drowsing Stream",
+    "Slug": "Drowsing-Stream-LB",
+    "IsUnique": false,
+    "CardType": "Location",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "Threat": "2",
+        "QuestPoints": "2"
+      },
+      "Traits": [
+        "Forest."
+      ],
+      "Keywords": [],
+      "Text": [
+        "While Drowsing Stream is the active location, you cannot draw cards."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Ashen Raiders",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 7,
+    "Quantity": 2,
+    "Artist": null
+  }
+]

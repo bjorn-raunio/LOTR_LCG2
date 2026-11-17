@@ -16,7 +16,7 @@
       "Traits": [],
       "Keywords": [],
       "Text": [
-        "Setup: Set aside the Drowned Watchtower and the Mire Hag. Add 1 Sunken Path to the staging area."
+        "Setup: Search the encounter deck for 1 copy of Bog Spider and 1 copy of Old Causeway, and add them to the staging area. Then shuffle the encounter deck."
       ],
       "Shadow": null,
       "FlavorText": null
@@ -35,8 +35,8 @@
     "Artist": null
   },
   {
-    "Title": "The Drowned Watchtower",
-    "Slug": "The-Drowned-Watchtower-LB",
+    "Title": "A Fork in the Fen",
+    "Slug": "A-Fork-in-the-Fen-LB",
     "IsUnique": false,
     "CardType": "Quest",
     "CardSubType": "None",
@@ -46,12 +46,12 @@
       "ImagePath": null,
       "Stats": {
         "StageNumber": "2",
-        "QuestPoints": "6"
+        "QuestPoints": "2"
       },
       "Traits": [],
       "Keywords": [],
       "Text": [
-        "When revealed: Add the Drowned Watchtower to the staging area. This stage cannot be completed until the Drowned Watchtower is in the victory display."
+        "Forced: When you complete this stage, proceed to one of the 2 stage 3 cards (The Drowned Path or The Watchtower Road), at random."
       ],
       "Shadow": null,
       "FlavorText": null
@@ -70,8 +70,8 @@
     "Artist": null
   },
   {
-    "Title": "The Mire Hag Wakes",
-    "Slug": "The-Mire-Hag-Wakes-LB",
+    "Title": "The Drowned Path",
+    "Slug": "The-Drowned-Path-LB",
     "IsUnique": false,
     "CardType": "Quest",
     "CardSubType": "None",
@@ -81,12 +81,13 @@
       "ImagePath": null,
       "Stats": {
         "StageNumber": "3",
-        "QuestPoints": "10"
+        "QuestPoints": "0"
       },
       "Traits": [],
       "Keywords": [],
       "Text": [
-        "When revealed: Add the Mire Hag to the staging area. This stage cannot be completed while the Mire Hag is in play. Complete this stage to win."
+        "When revealed: Search the encounter deck and discard pile for 1 Spider card of your choice, and add it to the staging area.",
+        "You must find and defeat The Fen Mother to win this game."
       ],
       "Shadow": null,
       "FlavorText": null
@@ -105,27 +106,23 @@
     "Artist": null
   },
   {
-    "Title": "Drowned Watchtower",
-    "Slug": "Drowned-Watchtower-LB",
-    "IsUnique": true,
-    "CardType": "Location",
+    "Title": "The Watchtower Road",
+    "Slug": "The-Watchtower-Road-LB",
+    "IsUnique": false,
+    "CardType": "Quest",
     "CardSubType": "None",
     "Sphere": null,
     "Front": {
       "Subtitle": null,
       "ImagePath": null,
       "Stats": {
-        "Threat": "3",
-        "QuestPoints": "5",
-        "VictoryPoints": "3"
+        "StageNumber": "3",
+        "QuestPoints": "10"
       },
-      "Traits": [
-        "Ruin.",
-        "Marsh."
-      ],
+      "Traits": [],
       "Keywords": [],
       "Text": [
-        "Travel: Raise your dread by 2 to travel here."
+        "This stage cannot be completed while The Fen Mother is in play. Complete this stage to win."
       ],
       "Shadow": null,
       "FlavorText": null
@@ -136,7 +133,7 @@
       "EncounterSet": "The Fenwatch Crossing",
       "EasyModeQuantity": 0,
       "IncludedEncounterSets": [],
-      "StageNumber": null,
+      "StageNumber": 3,
       "StageLetter": null
     },
     "Number": 4,
@@ -144,9 +141,9 @@
     "Artist": null
   },
   {
-    "Title": "Mire Hag",
-    "Slug": "Mire-Hag-LB",
-    "IsUnique": true,
+    "Title": "Bog Spider",
+    "Slug": "Bog-Spider-LB",
+    "IsUnique": false,
     "CardType": "Enemy",
     "CardSubType": "None",
     "Sphere": null,
@@ -154,24 +151,21 @@
       "Subtitle": null,
       "ImagePath": null,
       "Stats": {
-        "EngagementCost": "40",
-        "Threat": "4",
-        "Might": "4",
-        "Guard": "3",
-        "Health": "8",
-        "VictoryPoints": "5"
+        "EngagementCost": "25",
+        "Threat": "2",
+        "Might": "2",
+        "Guard": "1",
+        "Health": "4"
       },
       "Traits": [
-        "Witch.",
-        "Marsh."
+        "Creature.",
+        "Spider."
       ],
-      "Keywords": [
-        "Cannot have attachments."
-      ],
+      "Keywords": [],
       "Text": [
-        "The Mire Hag gets +1 Might for each location in the staging area. Cannot have attachments."
+        "Forced: After Bog Spider engages you, it gets +1 Might until the end of the round."
       ],
-      "Shadow": null,
+      "Shadow": "Shadow: Choose and discard 1 attachment you control.",
       "FlavorText": null
     },
     "Back": null,
@@ -184,12 +178,12 @@
       "StageLetter": null
     },
     "Number": 5,
-    "Quantity": 1,
+    "Quantity": 4,
     "Artist": null
   },
   {
-    "Title": "Bog Lurker",
-    "Slug": "Bog-Lurker-LB",
+    "Title": "Reedwater Patrol",
+    "Slug": "Reedwater-Patrol-LB",
     "IsUnique": false,
     "CardType": "Enemy",
     "CardSubType": "None",
@@ -198,21 +192,18 @@
       "Subtitle": null,
       "ImagePath": null,
       "Stats": {
-        "EngagementCost": "20",
-        "Threat": "2",
-        "Might": "2",
+        "EngagementCost": "5",
+        "Threat": "3",
+        "Might": "3",
         "Guard": "1",
-        "Health": "3"
+        "Health": "2"
       },
       "Traits": [
-        "Creature.",
-        "Marsh."
+        "Raider."
       ],
       "Keywords": [],
-      "Text": [
-        "Forced: After Bog Lurker engages you, deal 1 damage to a character you control."
-      ],
-      "Shadow": "Shadow: The attacking enemy gets +1 Might.",
+      "Text": [],
+      "Shadow": "Shadow: The attacking enemy gets +1 Might. (If this attack is undefended, also raise your dread by 3.)",
       "FlavorText": null
     },
     "Back": null,
@@ -225,12 +216,12 @@
       "StageLetter": null
     },
     "Number": 6,
-    "Quantity": 3,
+    "Quantity": 1,
     "Artist": null
   },
   {
-    "Title": "Marsh Leech",
-    "Slug": "Marsh-Leech-LB",
+    "Title": "Marsh Bats",
+    "Slug": "Marsh-Bats-LB",
     "IsUnique": false,
     "CardType": "Enemy",
     "CardSubType": "None",
@@ -239,19 +230,20 @@
       "Subtitle": null,
       "ImagePath": null,
       "Stats": {
-        "EngagementCost": "12",
+        "EngagementCost": "15",
         "Threat": "1",
         "Might": "1",
         "Guard": "0",
         "Health": "2"
       },
       "Traits": [
-        "Creature.",
-        "Marsh."
+        "Creature."
       ],
       "Keywords": [],
-      "Text": [],
-      "Shadow": "Shadow: If this attack is undefended, the attacking enemy gets +2 Might.",
+      "Text": [
+        "When revealed: Choose 1 character committed to the quest and remove it from the quest. (It does not ready.)"
+      ],
+      "Shadow": null,
       "FlavorText": null
     },
     "Back": null,
@@ -264,36 +256,31 @@
       "StageLetter": null
     },
     "Number": 7,
-    "Quantity": 4,
+    "Quantity": 1,
     "Artist": null
   },
   {
-    "Title": "Fen Wight",
-    "Slug": "Fen-Wight-LB",
+    "Title": "Old Causeway",
+    "Slug": "Old-Causeway-LB",
     "IsUnique": false,
-    "CardType": "Enemy",
+    "CardType": "Location",
     "CardSubType": "None",
     "Sphere": null,
     "Front": {
       "Subtitle": null,
       "ImagePath": null,
       "Stats": {
-        "EngagementCost": "32",
-        "Threat": "3",
-        "Might": "3",
-        "Guard": "2",
-        "Health": "4"
+        "Threat": "1",
+        "QuestPoints": "3"
       },
       "Traits": [
-        "Undead."
+        "Marsh."
       ],
-      "Keywords": [
-        "Doomed 2."
-      ],
+      "Keywords": [],
       "Text": [
-        "Doomed 2."
+        "Response: After you travel to Old Causeway, choose and ready 1 character you control."
       ],
-      "Shadow": "Shadow: The defending character gets -1 Guard for this attack.",
+      "Shadow": null,
       "FlavorText": null
     },
     "Back": null,
@@ -310,8 +297,8 @@
     "Artist": null
   },
   {
-    "Title": "Sunken Path",
-    "Slug": "Sunken-Path-LB",
+    "Title": "Fen Gate",
+    "Slug": "Fen-Gate-LB",
     "IsUnique": false,
     "CardType": "Location",
     "CardSubType": "None",
@@ -321,13 +308,15 @@
       "ImagePath": null,
       "Stats": {
         "Threat": "2",
-        "QuestPoints": "3"
+        "QuestPoints": "4"
       },
       "Traits": [
         "Marsh."
       ],
       "Keywords": [],
-      "Text": [],
+      "Text": [
+        "Response: After you travel to Fen Gate, draw 2 cards."
+      ],
       "Shadow": null,
       "FlavorText": null
     },
@@ -341,176 +330,6 @@
       "StageLetter": null
     },
     "Number": 9,
-    "Quantity": 3,
-    "Artist": null
-  },
-  {
-    "Title": "Reed Maze",
-    "Slug": "Reed-Maze-LB",
-    "IsUnique": false,
-    "CardType": "Location",
-    "CardSubType": "None",
-    "Sphere": null,
-    "Front": {
-      "Subtitle": null,
-      "ImagePath": null,
-      "Stats": {
-        "Threat": "2",
-        "QuestPoints": "2"
-      },
-      "Traits": [
-        "Marsh."
-      ],
-      "Keywords": [],
-      "Text": [
-        "Reed Maze gets +1 Threat while there is no active location."
-      ],
-      "Shadow": null,
-      "FlavorText": null
-    },
-    "Back": null,
-    "CardSet": "Lanternbearers",
-    "EncounterInfo": {
-      "EncounterSet": "The Fenwatch Crossing",
-      "EasyModeQuantity": 0,
-      "IncludedEncounterSets": [],
-      "StageNumber": null,
-      "StageLetter": null
-    },
-    "Number": 10,
-    "Quantity": 3,
-    "Artist": null
-  },
-  {
-    "Title": "Old Fen Village",
-    "Slug": "Old-Fen-Village-LB",
-    "IsUnique": false,
-    "CardType": "Location",
-    "CardSubType": "None",
-    "Sphere": null,
-    "Front": {
-      "Subtitle": null,
-      "ImagePath": null,
-      "Stats": {
-        "Threat": "1",
-        "QuestPoints": "5"
-      },
-      "Traits": [
-        "Village."
-      ],
-      "Keywords": [],
-      "Text": [
-        "Forced: After Old Fen Village is explored, draw 1 card."
-      ],
-      "Shadow": null,
-      "FlavorText": null
-    },
-    "Back": null,
-    "CardSet": "Lanternbearers",
-    "EncounterInfo": {
-      "EncounterSet": "The Fenwatch Crossing",
-      "EasyModeQuantity": 0,
-      "IncludedEncounterSets": [],
-      "StageNumber": null,
-      "StageLetter": null
-    },
-    "Number": 11,
-    "Quantity": 2,
-    "Artist": null
-  },
-  {
-    "Title": "Choking Mists",
-    "Slug": "Choking-Mists-LB",
-    "IsUnique": false,
-    "CardType": "Treachery",
-    "CardSubType": "None",
-    "Sphere": null,
-    "Front": {
-      "Subtitle": null,
-      "ImagePath": null,
-      "Stats": {},
-      "Traits": [],
-      "Keywords": [],
-      "Text": [
-        "When revealed: Each questing character gets -1 Resolve until the end of the phase."
-      ],
-      "Shadow": "Shadow: Raise your dread by 1.",
-      "FlavorText": null
-    },
-    "Back": null,
-    "CardSet": "Lanternbearers",
-    "EncounterInfo": {
-      "EncounterSet": "The Fenwatch Crossing",
-      "EasyModeQuantity": 0,
-      "IncludedEncounterSets": [],
-      "StageNumber": null,
-      "StageLetter": null
-    },
-    "Number": 12,
-    "Quantity": 3,
-    "Artist": null
-  },
-  {
-    "Title": "Sinking Ground",
-    "Slug": "Sinking-Ground-LB",
-    "IsUnique": false,
-    "CardType": "Treachery",
-    "CardSubType": "None",
-    "Sphere": null,
-    "Front": {
-      "Subtitle": null,
-      "ImagePath": null,
-      "Stats": {},
-      "Traits": [],
-      "Keywords": [],
-      "Text": [
-        "When revealed: Choose a questing character and remove it from the quest. If you cannot, raise your dread by 2."
-      ],
-      "Shadow": null,
-      "FlavorText": null
-    },
-    "Back": null,
-    "CardSet": "Lanternbearers",
-    "EncounterInfo": {
-      "EncounterSet": "The Fenwatch Crossing",
-      "EasyModeQuantity": 0,
-      "IncludedEncounterSets": [],
-      "StageNumber": null,
-      "StageLetter": null
-    },
-    "Number": 13,
-    "Quantity": 2,
-    "Artist": null
-  },
-  {
-    "Title": "Will-o'-Wisps",
-    "Slug": "Will-o'-Wisps-LB",
-    "IsUnique": false,
-    "CardType": "Treachery",
-    "CardSubType": "None",
-    "Sphere": null,
-    "Front": {
-      "Subtitle": null,
-      "ImagePath": null,
-      "Stats": {},
-      "Traits": [],
-      "Keywords": [],
-      "Text": [
-        "When revealed: Raise your dread by 1 for each location in the staging area (minimum 1)."
-      ],
-      "Shadow": null,
-      "FlavorText": null
-    },
-    "Back": null,
-    "CardSet": "Lanternbearers",
-    "EncounterInfo": {
-      "EncounterSet": "The Fenwatch Crossing",
-      "EasyModeQuantity": 0,
-      "IncludedEncounterSets": [],
-      "StageNumber": null,
-      "StageLetter": null
-    },
-    "Number": 14,
     "Quantity": 2,
     "Artist": null
   }

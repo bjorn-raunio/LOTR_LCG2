@@ -1,0 +1,268 @@
+[
+  {
+    "Title": "Brood Spider",
+    "Slug": "Brood-Spider-LB",
+    "IsUnique": false,
+    "CardType": "Enemy",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "EngagementCost": "20",
+        "Threat": "2",
+        "Might": "3",
+        "Guard": "1",
+        "Health": "3"
+      },
+      "Traits": [
+        "Creature.",
+        "Spider."
+      ],
+      "Keywords": [],
+      "Text": [
+        "When revealed: Choose and exhaust 1 character you control."
+      ],
+      "Shadow": "Shadow: Choose and exhaust 1 character you control. (2 characters instead if this attack is undefended.)",
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Fen Spiders",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 1,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Bloodflies",
+    "Slug": "Bloodflies-LB",
+    "IsUnique": false,
+    "CardType": "Enemy",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "EngagementCost": "40",
+        "Threat": "1",
+        "Might": "2",
+        "Guard": "0",
+        "Health": "3",
+        "VictoryPoints": "5"
+      },
+      "Traits": [
+        "Creature.",
+        "Insect."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Forced: After Bloodflies engages you, deal 5 damage to a hero you control."
+      ],
+      "Shadow": "Shadow: Deal 1 damage to each character you control. (2 damage instead if this attack is undefended.)",
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Fen Spiders",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 2,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "The Fen Mother",
+    "Slug": "The-Fen-Mother-LB",
+    "IsUnique": false,
+    "CardType": "Enemy",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "EngagementCost": "32",
+        "Threat": "3",
+        "Might": "5",
+        "Guard": "2",
+        "Health": "9"
+      },
+      "Traits": [
+        "Creature.",
+        "Spider."
+      ],
+      "Keywords": [],
+      "Text": [
+        "When revealed: Each character currently committed to the quest gets -1 Resolve until the end of the phase."
+      ],
+      "Shadow": "Shadow: Raise your dread by 4. (Raise it by 8 instead if this attack is undefended.)",
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Fen Spiders",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 3,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Great Marsh Web",
+    "Slug": "Great-Marsh-Web-LB",
+    "IsUnique": false,
+    "CardType": "Location",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "Threat": "2",
+        "QuestPoints": "2"
+      },
+      "Traits": [
+        "Marsh."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Travel: Exhaust 1 hero you control to travel here."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Fen Spiders",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 4,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Barrow Hills",
+    "Slug": "Barrow-Hills-LB",
+    "IsUnique": false,
+    "CardType": "Location",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "Threat": "2",
+        "QuestPoints": "3"
+      },
+      "Traits": [
+        "Marsh.",
+        "Hill."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Travel: Reveal the top card of the encounter deck and add it to the staging area to travel here.",
+        "Response: After Barrow Hills is explored, search the top 5 cards of your deck for 1 card and add it to your hand. Shuffle the rest back into your deck."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Fen Spiders",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 5,
+    "Quantity": 3,
+    "Artist": null
+  },
+  {
+    "Title": "Eyes in the Reeds",
+    "Slug": "Eyes-in-the-Reeds-LB",
+    "IsUnique": false,
+    "CardType": "Treachery",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {},
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "When revealed: Discard all event cards in your hand."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Fen Spiders",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 6,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Caught in Silk",
+    "Slug": "Caught-in-Silk-LB",
+    "IsUnique": false,
+    "CardType": "Treachery",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {},
+      "Traits": [
+        "Condition."
+      ],
+      "Keywords": [],
+      "Text": [
+        "When revealed: Attach this card to a hero you control. (Counts as a Condition attachment with the text: \"Attached hero does not ready during the refresh phase unless you pay 2 supply from that hero's pool.\")"
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Fen Spiders",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 7,
+    "Quantity": 2,
+    "Artist": null
+  }
+]

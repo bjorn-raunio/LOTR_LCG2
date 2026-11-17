@@ -11,12 +11,14 @@
       "ImagePath": null,
       "Stats": {
         "StageNumber": "1",
-        "QuestPoints": "9"
+        "QuestPoints": "8"
       },
       "Traits": [],
       "Keywords": [],
       "Text": [
-        "Setup: Set aside the Raider Warchief and Harrowmere Gate. Add 1 Raider Outrider to the staging area."
+        "Setup: Reveal 1 card from the top of the encounter deck and add it to the staging area.",
+        "When revealed: Search the encounter deck for 1 Hill Giant if one is not already in play, and add it to the staging area. Shuffle the encounter deck.",
+        "This stage cannot be completed while any Hill Giant is in play."
       ],
       "Shadow": null,
       "FlavorText": null
@@ -46,12 +48,12 @@
       "ImagePath": null,
       "Stats": {
         "StageNumber": "2",
-        "QuestPoints": "12"
+        "QuestPoints": "16"
       },
       "Traits": [],
       "Keywords": [],
       "Text": [
-        "When revealed: Add Harrowmere Gate to the staging area. Each enemy in the staging area gets +1 Threat."
+        "Reveal 1 additional card from the encounter deck each quest phase. Do not make engagement checks during the encounter phase. (You may still optionally engage 1 enemy each encounter phase.)"
       ],
       "Shadow": null,
       "FlavorText": null
@@ -70,8 +72,8 @@
     "Artist": null
   },
   {
-    "Title": "The Warchief's Banner",
-    "Slug": "The-Warchief's-Banner-LB",
+    "Title": "Ambush at the Gate",
+    "Slug": "Ambush-at-the-Gate-LB",
     "IsUnique": false,
     "CardType": "Quest",
     "CardSubType": "None",
@@ -86,7 +88,9 @@
       "Traits": [],
       "Keywords": [],
       "Text": [
-        "When revealed: Add the Raider Warchief to the staging area. Destroy the Raider Warchief to win."
+        "When revealed: Reveal 2 encounter cards and add them to the staging area.",
+        "Skip the staging step of the quest phase for the remainder of the game.",
+        "Once there are no enemies in play, you have won the game."
       ],
       "Shadow": null,
       "FlavorText": null
@@ -105,9 +109,9 @@
     "Artist": null
   },
   {
-    "Title": "Raider Warchief",
-    "Slug": "Raider-Warchief-LB",
-    "IsUnique": true,
+    "Title": "Raider Torchbearer",
+    "Slug": "Raider-Torchbearer-LB",
+    "IsUnique": false,
     "CardType": "Enemy",
     "CardSubType": "None",
     "Sphere": null,
@@ -115,24 +119,20 @@
       "Subtitle": null,
       "ImagePath": null,
       "Stats": {
-        "EngagementCost": "35",
-        "Threat": "4",
-        "Might": "5",
-        "Guard": "3",
-        "Health": "9",
-        "VictoryPoints": "5"
+        "EngagementCost": "15",
+        "Threat": "2",
+        "Might": "2",
+        "Guard": "1",
+        "Health": "3"
       },
       "Traits": [
-        "Raider.",
-        "Captain."
+        "Raider."
       ],
-      "Keywords": [
-        "Cannot have attachments."
-      ],
+      "Keywords": [],
       "Text": [
-        "Cannot have attachments. While engaged with you, the Raider Warchief gets +1 Might for each other enemy engaged with you."
+        "Forced: After Raider Torchbearer attacks, remove 1 progress from the current quest."
       ],
-      "Shadow": null,
+      "Shadow": "Shadow: Remove 1 progress from the current quest. (3 progress instead if this attack is undefended.)",
       "FlavorText": null
     },
     "Back": null,
@@ -145,32 +145,26 @@
       "StageLetter": null
     },
     "Number": 4,
-    "Quantity": 1,
+    "Quantity": 3,
     "Artist": null
   },
   {
-    "Title": "Harrowmere Gate",
-    "Slug": "Harrowmere-Gate-LB",
-    "IsUnique": true,
-    "CardType": "Location",
+    "Title": "Gathering at Dusk",
+    "Slug": "Gathering-at-Dusk-LB",
+    "IsUnique": false,
+    "CardType": "Treachery",
     "CardSubType": "None",
     "Sphere": null,
     "Front": {
       "Subtitle": null,
       "ImagePath": null,
-      "Stats": {
-        "Threat": "3",
-        "QuestPoints": "5",
-        "VictoryPoints": "2"
-      },
-      "Traits": [
-        "Town."
-      ],
+      "Stats": {},
+      "Traits": [],
       "Keywords": [],
       "Text": [
-        "Travel: Exhaust a hero you control to travel here."
+        "When revealed: Reveal 1 additional card from the encounter deck."
       ],
-      "Shadow": null,
+      "Shadow": "Shadow: Deal 1 additional shadow card to the attacking enemy.",
       "FlavorText": null
     },
     "Back": null,
@@ -187,30 +181,27 @@
     "Artist": null
   },
   {
-    "Title": "Raider Outrider",
-    "Slug": "Raider-Outrider-LB",
+    "Title": "Banks of the Harrow",
+    "Slug": "Banks-of-the-Harrow-LB",
     "IsUnique": false,
-    "CardType": "Enemy",
+    "CardType": "Location",
     "CardSubType": "None",
     "Sphere": null,
     "Front": {
       "Subtitle": null,
       "ImagePath": null,
       "Stats": {
-        "EngagementCost": "15",
-        "Threat": "2",
-        "Might": "2",
-        "Guard": "1",
-        "Health": "2"
+        "Threat": "1",
+        "QuestPoints": "3"
       },
       "Traits": [
-        "Raider."
+        "Riverland."
       ],
       "Keywords": [],
       "Text": [
-        "Forced: After Raider Outrider engages you, it makes an immediate attack."
+        "Forced: If Banks of the Harrow leaves play, return it to the top of the encounter deck instead of placing it in the discard pile."
       ],
-      "Shadow": "Shadow: The attacking enemy gets +1 Might.",
+      "Shadow": null,
       "FlavorText": null
     },
     "Back": null,
@@ -223,289 +214,45 @@
       "StageLetter": null
     },
     "Number": 6,
-    "Quantity": 3,
+    "Quantity": 2,
     "Artist": null
   },
   {
-    "Title": "Raider Brute",
-    "Slug": "Raider-Brute-LB",
+    "Title": "Smouldering Fields",
+    "Slug": "Smouldering-Fields-LB",
     "IsUnique": false,
-    "CardType": "Enemy",
+    "CardType": "Location",
     "CardSubType": "None",
     "Sphere": null,
     "Front": {
       "Subtitle": null,
       "ImagePath": null,
       "Stats": {
-        "EngagementCost": "28",
-        "Threat": "2",
-        "Might": "3",
-        "Guard": "2",
-        "Health": "4"
+        "Threat": "3",
+        "QuestPoints": "3",
+        "VictoryPoints": "3"
       },
       "Traits": [
-        "Raider."
+        "Farmland."
       ],
       "Keywords": [],
-      "Text": [],
-      "Shadow": "Shadow: If this attack is defended, deal 1 damage to the defending character.",
+      "Text": [
+        "Forced: While Smouldering Fields is the active location, raise your dread by 1 additional point during the refresh phase."
+      ],
+      "Shadow": null,
       "FlavorText": null
     },
     "Back": null,
     "CardSet": "Lanternbearers",
     "EncounterInfo": {
       "EncounterSet": "The Burning of Harrowmere",
-      "EasyModeQuantity": 0,
+      "EasyModeQuantity": 1,
       "IncludedEncounterSets": [],
       "StageNumber": null,
       "StageLetter": null
     },
     "Number": 7,
     "Quantity": 3,
-    "Artist": null
-  },
-  {
-    "Title": "Hill Wolf",
-    "Slug": "Hill-Wolf-LB",
-    "IsUnique": false,
-    "CardType": "Enemy",
-    "CardSubType": "None",
-    "Sphere": null,
-    "Front": {
-      "Subtitle": null,
-      "ImagePath": null,
-      "Stats": {
-        "EngagementCost": "24",
-        "Threat": "1",
-        "Might": "2",
-        "Guard": "1",
-        "Health": "2"
-      },
-      "Traits": [
-        "Creature."
-      ],
-      "Keywords": [],
-      "Text": [],
-      "Shadow": "Shadow: Raise your dread by 1.",
-      "FlavorText": null
-    },
-    "Back": null,
-    "CardSet": "Lanternbearers",
-    "EncounterInfo": {
-      "EncounterSet": "The Burning of Harrowmere",
-      "EasyModeQuantity": 0,
-      "IncludedEncounterSets": [],
-      "StageNumber": null,
-      "StageLetter": null
-    },
-    "Number": 8,
-    "Quantity": 3,
-    "Artist": null
-  },
-  {
-    "Title": "Burning Farmstead",
-    "Slug": "Burning-Farmstead-LB",
-    "IsUnique": false,
-    "CardType": "Location",
-    "CardSubType": "None",
-    "Sphere": null,
-    "Front": {
-      "Subtitle": null,
-      "ImagePath": null,
-      "Stats": {
-        "Threat": "2",
-        "QuestPoints": "3"
-      },
-      "Traits": [
-        "Farmland."
-      ],
-      "Keywords": [],
-      "Text": [
-        "Forced: After you travel to Burning Farmstead, raise your dread by 1."
-      ],
-      "Shadow": null,
-      "FlavorText": null
-    },
-    "Back": null,
-    "CardSet": "Lanternbearers",
-    "EncounterInfo": {
-      "EncounterSet": "The Burning of Harrowmere",
-      "EasyModeQuantity": 0,
-      "IncludedEncounterSets": [],
-      "StageNumber": null,
-      "StageLetter": null
-    },
-    "Number": 9,
-    "Quantity": 3,
-    "Artist": null
-  },
-  {
-    "Title": "Watch Hill",
-    "Slug": "Watch-Hill-LB",
-    "IsUnique": false,
-    "CardType": "Location",
-    "CardSubType": "None",
-    "Sphere": null,
-    "Front": {
-      "Subtitle": null,
-      "ImagePath": null,
-      "Stats": {
-        "Threat": "1",
-        "QuestPoints": "4",
-        "VictoryPoints": "1"
-      },
-      "Traits": [
-        "Hill."
-      ],
-      "Keywords": [],
-      "Text": [
-        "While Watch Hill is the active location, each enemy in the staging area gets -1 Threat."
-      ],
-      "Shadow": null,
-      "FlavorText": null
-    },
-    "Back": null,
-    "CardSet": "Lanternbearers",
-    "EncounterInfo": {
-      "EncounterSet": "The Burning of Harrowmere",
-      "EasyModeQuantity": 0,
-      "IncludedEncounterSets": [],
-      "StageNumber": null,
-      "StageLetter": null
-    },
-    "Number": 10,
-    "Quantity": 2,
-    "Artist": null
-  },
-  {
-    "Title": "Trampled Fields",
-    "Slug": "Trampled-Fields-LB",
-    "IsUnique": false,
-    "CardType": "Location",
-    "CardSubType": "None",
-    "Sphere": null,
-    "Front": {
-      "Subtitle": null,
-      "ImagePath": null,
-      "Stats": {
-        "Threat": "1",
-        "QuestPoints": "2"
-      },
-      "Traits": [
-        "Farmland."
-      ],
-      "Keywords": [],
-      "Text": [],
-      "Shadow": null,
-      "FlavorText": null
-    },
-    "Back": null,
-    "CardSet": "Lanternbearers",
-    "EncounterInfo": {
-      "EncounterSet": "The Burning of Harrowmere",
-      "EasyModeQuantity": 0,
-      "IncludedEncounterSets": [],
-      "StageNumber": null,
-      "StageLetter": null
-    },
-    "Number": 11,
-    "Quantity": 3,
-    "Artist": null
-  },
-  {
-    "Title": "Raiders' Ambush",
-    "Slug": "Raiders'-Ambush-LB",
-    "IsUnique": false,
-    "CardType": "Treachery",
-    "CardSubType": "None",
-    "Sphere": null,
-    "Front": {
-      "Subtitle": null,
-      "ImagePath": null,
-      "Stats": {},
-      "Traits": [],
-      "Keywords": [],
-      "Text": [
-        "When revealed: The engaged enemy with the highest Might makes an immediate attack. If no enemy is engaged with you, this card gains surge."
-      ],
-      "Shadow": null,
-      "FlavorText": null
-    },
-    "Back": null,
-    "CardSet": "Lanternbearers",
-    "EncounterInfo": {
-      "EncounterSet": "The Burning of Harrowmere",
-      "EasyModeQuantity": 0,
-      "IncludedEncounterSets": [],
-      "StageNumber": null,
-      "StageLetter": null
-    },
-    "Number": 12,
-    "Quantity": 2,
-    "Artist": null
-  },
-  {
-    "Title": "Smoke and Ash",
-    "Slug": "Smoke-and-Ash-LB",
-    "IsUnique": false,
-    "CardType": "Treachery",
-    "CardSubType": "None",
-    "Sphere": null,
-    "Front": {
-      "Subtitle": null,
-      "ImagePath": null,
-      "Stats": {},
-      "Traits": [],
-      "Keywords": [],
-      "Text": [
-        "When revealed: Deal 1 damage to each exhausted character you control."
-      ],
-      "Shadow": "Shadow: Raise your dread by 1.",
-      "FlavorText": null
-    },
-    "Back": null,
-    "CardSet": "Lanternbearers",
-    "EncounterInfo": {
-      "EncounterSet": "The Burning of Harrowmere",
-      "EasyModeQuantity": 0,
-      "IncludedEncounterSets": [],
-      "StageNumber": null,
-      "StageLetter": null
-    },
-    "Number": 13,
-    "Quantity": 2,
-    "Artist": null
-  },
-  {
-    "Title": "Call to Arms",
-    "Slug": "Call-to-Arms-LB",
-    "IsUnique": false,
-    "CardType": "Treachery",
-    "CardSubType": "None",
-    "Sphere": null,
-    "Front": {
-      "Subtitle": null,
-      "ImagePath": null,
-      "Stats": {},
-      "Traits": [],
-      "Keywords": [],
-      "Text": [
-        "When revealed: The enemy in the staging area with the lowest engagement cost engages you. If there is none, raise your dread by 2."
-      ],
-      "Shadow": "Shadow: If the attacking enemy is a Raider, it gets +2 Might.",
-      "FlavorText": null
-    },
-    "Back": null,
-    "CardSet": "Lanternbearers",
-    "EncounterInfo": {
-      "EncounterSet": "The Burning of Harrowmere",
-      "EasyModeQuantity": 0,
-      "IncludedEncounterSets": [],
-      "StageNumber": null,
-      "StageLetter": null
-    },
-    "Number": 14,
-    "Quantity": 2,
     "Artist": null
   }
 ]

@@ -19,6 +19,11 @@ namespace Lanternbearers.Cards
             RegisterPlayerCards();
             RegisterFenwatch();
             RegisterHarrowmere();
+            RegisterCinderhold();
+            RegisterFenSpiders();
+            RegisterAshenRaiders();
+            RegisterWildlands();
+            RegisterGatheringDark();
         }
 
         private static void On(string slug, Action<CardDef> script)

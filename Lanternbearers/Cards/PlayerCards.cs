@@ -226,8 +226,8 @@ namespace Lanternbearers.Cards
 
             On("Tobrik-Stonejaw-LB", d => d.Triggers.Add(new TriggeredAbility
             {
-                On = Trigger.AfterEncounterRevealed, Forced = true,
-                Condition = (e, c, a) => c.Committed && a.Subject.IsEnemy && a.Subject.Zone == Zone.Staging,
+                On = Trigger.EnemyRevealing, Forced = true,
+                Condition = (e, c, a) => c.Committed && a.Subject.IsEnemy && a.Subject.Zone == Zone.Revealing,
                 Resolve = async (e, c, a) => { e.Write($"Tobrik Stonejaw strikes {a.Subject.Name} as it is revealed."); await e.DealDamage(a.Subject, 1); }
             }));
 
@@ -325,10 +325,10 @@ namespace Lanternbearers.Cards
 
             On("Strike-First-LB", d =>
             {
-                d.CanPlayEvent = (e, c) => e.Characters.Any(x => !x.Exhausted && AttackTargetsFor(e, x).Any());
+                d.CanPlayEvent = (e, c) => e.Characters.Any(x => !x.Exhausted && e.CanAttackOrDefend(x) && AttackTargetsFor(e, x).Any());
                 d.PlayEvent = async (e, c) =>
                 {
-                    var ch = await e.ChooseOne("Strike First: choose a character to attack.", e.Characters.Where(x => !x.Exhausted && AttackTargetsFor(e, x).Any()));
+                    var ch = await e.ChooseOne("Strike First: choose a character to attack.", e.Characters.Where(x => !x.Exhausted && e.CanAttackOrDefend(x) && AttackTargetsFor(e, x).Any()));
                     var t = await e.ChooseOne($"Strike First: choose an enemy for {ch.Name} to attack.", AttackTargetsFor(e, ch));
                     await e.ResolvePlayerAttack(t, new List<Card> { ch });
                 };
@@ -473,7 +473,7 @@ namespace Lanternbearers.Cards
                 d.PlayEvent = async (e, c) =>
                 {
                     var t = await e.ChooseOne("Warding Light: return which enemy to the staging area?", e.Engaged);
-                    if (t.ShadowCard != null) { var s = t.ShadowCard; t.ShadowCard = null; s.FaceDown = false; e.MoveTo(s, Zone.EncounterDiscard); }
+                    e.DiscardShadowCards(t);
                     e.MoveTo(t, Zone.Staging);
                     e.Write($"{t.Name} is returned to the staging area.");
                 };

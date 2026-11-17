@@ -53,6 +53,7 @@ namespace Lanternbearers.Engine
         public Phase Phase = Phase.Setup;
         public string Step = "";
         public readonly List<TempModifier> TempMods = new();
+        public readonly List<LastingModifier> Lasting = new();
         public readonly List<string> Log = new();
         public bool IsOver;
         public bool Won;
@@ -72,6 +73,19 @@ namespace Lanternbearers.Engine
 
         private bool _pendingSurge;
         private int _questStageIndex;
+        private readonly List<Card> _queuedAttacks = new();
+
+        /// <summary>Named flags scripts can set for the rest of the game.</summary>
+        public readonly HashSet<string> Flags = new();
+        /// <summary>When set, the staging step of the quest phase is skipped.</summary>
+        public bool SkipStagingStep;
+        /// <summary>Conditions attached to the top of the player's deck (they cancel the next draw).</summary>
+        public readonly List<Card> DeckConditions = new();
+        /// <summary>Added to the total staging threat until the end of the phase.</summary>
+        public int StagingThreatBonus;
+        public int AlliesPlayedThisRound;
+        /// <summary>A hero taken prisoner by a scenario effect (out of play until rescued).</summary>
+        public Card Prisoner;
 
         public GameEngine(IPlayerInterface ui) { UI = ui; }
 
@@ -117,15 +131,28 @@ namespace Lanternbearers.Engine
                 if (src.Def.Modifier != null) v += src.Def.Modifier(this, src, c, s);
             foreach (var m in TempMods)
                 if (m.Target == c && m.Stat == s) v += m.Amount;
+            foreach (var l in Lasting) v += l.Mod(this, c, s);
             return Math.Max(0, v);
         }
+
+        /// <summary>Adds a lasting effect that applies to whatever currently matches it, until the duration ends.</summary>
+        public void AddLasting(Func<GameEngine, Card, Stat, int> mod, Duration d)
+            => Lasting.Add(new LastingModifier { Mod = mod, Duration = d });
 
         public void AddTemp(Card target, Stat stat, int amount, Duration d)
             => TempMods.Add(new TempModifier { Target = target, Stat = stat, Amount = amount, Duration = d });
 
-        private void ClearTemp(Duration d) => TempMods.RemoveAll(m => m.Duration == d);
+        private void ClearTemp(Duration d)
+        {
+            TempMods.RemoveAll(m => m.Duration == d);
+            Lasting.RemoveAll(m => m.Duration == d);
+        }
 
-        public int StagingThreat => Staging.Sum(c => Get(c, Stat.Threat));
+        public int StagingThreat => Staging.Sum(c => Get(c, Stat.Threat)) + StagingThreatBonus;
+
+        /// <summary>False if an effect prevents the character from attacking or defending.</summary>
+        public bool CanAttackOrDefend(Card ch) =>
+            !AllInPlay().Any(src => src.Def.PreventsAttackOrDefend?.Invoke(this, src, ch) == true);
         public int QuestingResolve => Characters.Where(c => c.Committed).Sum(c => Get(c, Stat.Resolve));
 
         // =====================================================================
@@ -189,8 +216,18 @@ namespace Lanternbearers.Engine
             }
         }
 
+        public bool CanDraw => !AllInPlay().Any(src => src.Def.PreventsDrawing?.Invoke(this, src) == true);
+
         public void Draw(int n)
         {
+            if (n > 0 && Phase != Phase.Setup && !CanDraw) { Write("You cannot draw cards."); return; }
+            if (n > 0 && DeckConditions.Count > 0)
+            {
+                var cond = DeckConditions[0];
+                MoveTo(cond, Zone.EncounterDiscard);
+                Write($"{cond.Name} is discarded instead of drawing.");
+                return;
+            }
             for (int i = 0; i < n; i++)
             {
                 if (Deck.Count == 0) { Write("Your deck is empty."); return; }
@@ -230,7 +267,7 @@ namespace Lanternbearers.Engine
         public async Task<bool> DealDamage(Card c, int n, List<Card> attackers = null)
         {
             if (n <= 0 || c == null) return false;
-            if (c.Zone is not (Zone.PlayArea or Zone.Engaged or Zone.Staging)) return false;
+            if (c.Zone is not (Zone.PlayArea or Zone.Engaged or Zone.Staging or Zone.Revealing)) return false;
             c.Damage += n;
             Write($"{c.Name} takes {n} damage ({c.Damage}/{Get(c, Stat.Health)}).");
             if (c.Damage >= Get(c, Stat.Health))
@@ -257,7 +294,12 @@ namespace Lanternbearers.Engine
                 case Zone.EncounterDiscard: EncounterDiscard.Remove(c); break;
                 case Zone.Victory: Victory.Remove(c); break;
                 case Zone.SetAside: SetAside.Remove(c); break;
+                case Zone.OnDeck: DeckConditions.Remove(c); break;
                 case Zone.ActiveLocation: if (ActiveLocation == c) ActiveLocation = null; break;
+                case Zone.Shadow:
+                    foreach (var en in Engaged.Concat(Staging)) en.ShadowCards.Remove(c);
+                    c.FaceDown = false;
+                    break;
                 case Zone.Attached:
                     c.AttachedTo?.Attachments.Remove(c);
                     c.AttachedTo = null;
@@ -282,26 +324,108 @@ namespace Lanternbearers.Engine
                 case Zone.EncounterDiscard: EncounterDiscard.Add(c); break;
                 case Zone.Victory: Victory.Add(c); break;
                 case Zone.SetAside: SetAside.Add(c); break;
+                case Zone.OnDeck: DeckConditions.Add(c); break;
                 case Zone.ActiveLocation: ActiveLocation = c; break;
             }
+            // A guard that leaves play no longer guards its objective.
+            if (z is not (Zone.Staging or Zone.Engaged or Zone.ActiveLocation))
+                foreach (var o in Staging.Where(x => x.GuardedBy == c)) o.GuardedBy = null;
         }
 
         /// <summary>Puts a card into its owner's discard pile, cleaning up tokens and attachments.</summary>
         public void DiscardCard(Card c)
         {
             foreach (var a in c.Attachments.ToList()) DiscardCard(a);
-            if (c.ShadowCard != null) { var s = c.ShadowCard; c.ShadowCard = null; s.FaceDown = false; MoveTo(s, Zone.EncounterDiscard); }
+            DiscardShadowCards(c);
             c.Damage = c.Resources = c.Progress = 0;
             c.Exhausted = c.Committed = false;
             c.FaceDown = false;
+            if (c.Def.Token)
+            {
+                RemoveFromCurrentZone(c);
+                c.Zone = Zone.None;
+                if (c.FaceDownCard != null)
+                {
+                    var under = c.FaceDownCard;
+                    c.FaceDownCard = null;
+                    MoveTo(under, under.Def.IsPlayerCard ? Zone.Discard : Zone.EncounterDiscard);
+                    Write($"The {c.Name} leaves play: {under.Name} is placed in your discard pile.");
+                }
+                return;
+            }
+            if (c.Type == CardType.Objective)
+            {
+                c.GuardedBy = null;
+                MoveTo(c, Zone.Staging);
+                Write($"{c.Name} returns to the staging area.");
+                return;
+            }
             if (c.Def.IsPlayerCard) MoveTo(c, Zone.Discard);
             else MoveTo(c, c.Def.Victory > 0 && (c.IsEnemy || c.IsLocation) && c.Zone != Zone.Shadow ? Zone.Victory : Zone.EncounterDiscard);
         }
+
+        /// <summary>Discards all shadow cards dealt to an enemy.</summary>
+        public void DiscardShadowCards(Card enemy)
+        {
+            foreach (var s in enemy.ShadowCards.ToList()) MoveTo(s, Zone.EncounterDiscard);
+            enemy.ShadowCards.Clear();
+        }
+
+        /// <summary>Deals the top encounter card to an enemy as a face-down shadow card. Returns false if the deck is empty.</summary>
+        public bool DealShadowCard(Card enemy)
+        {
+            if (EncounterDeck.Count == 0) return false;
+            var s = EncounterDeck[0];
+            RemoveFromCurrentZone(s);
+            s.Zone = Zone.Shadow;
+            s.FaceDown = true;
+            enemy.ShadowCards.Add(s);
+            return true;
+        }
+
+        /// <summary>Returns an encounter card to the encounter deck (top, or shuffled in), clearing tokens and attachments.</summary>
+        public void ReturnToEncounterDeck(Card c, bool toTop)
+        {
+            foreach (var a in c.Attachments.ToList()) DiscardCard(a);
+            DiscardShadowCards(c);
+            c.Damage = c.Resources = c.Progress = 0;
+            c.Exhausted = c.Committed = c.FaceDown = false;
+            c.GuardedBy = null;
+            MoveTo(c, Zone.EncounterDeck, toTop);
+            if (!toTop) Shuffle(EncounterDeck);
+        }
+
+        /// <summary>True while an objective's guard is still in play.</summary>
+        public bool IsGuarded(Card obj) => obj.GuardedBy != null && obj.GuardedBy.Zone is Zone.Staging or Zone.Engaged or Zone.ActiveLocation;
+
+        /// <summary>
+        /// Reveals the next encounter card to guard an objective. An enemy or location that ends up in
+        /// play guards it; a treachery resolves normally and leaves the objective unguarded.
+        /// </summary>
+        public async Task GuardObjective(Card obj)
+        {
+            if (EncounterDeck.Count == 0) return;
+            var top = EncounterDeck[0];
+            Write($"{obj.Name} is guarded: an encounter card is revealed.");
+            bool surge = _pendingSurge;
+            await RevealEncounterCard();
+            _pendingSurge = surge;
+            if (top.Zone == Zone.Staging && (top.IsEnemy || top.IsLocation))
+            {
+                obj.GuardedBy = top;
+                Write($"{top.Name} guards {obj.Name}.");
+            }
+            else Write($"{obj.Name} is left unguarded.");
+        }
+
+        /// <summary>Queues an extra enemy attack, resolved right after the current attack.</summary>
+        public void QueueAttack(Card enemy) => _queuedAttacks.Add(enemy);
 
         private async Task Destroy(Card c, List<Card> attackers)
         {
             bool wasEnemy = c.IsEnemy;
             bool wasHero = c.IsHero;
+            bool wasInPlay = c.Zone is Zone.PlayArea or Zone.Engaged or Zone.Staging or Zone.ActiveLocation;
             Write(wasEnemy ? $"{c.Name} is destroyed!" : $"{c.Name} has fallen.");
             DiscardCard(c);
             if (wasHero && !Heroes.Any())
@@ -310,7 +434,7 @@ namespace Lanternbearers.Engine
                 await Fire(Trigger.AfterCharacterLeavesPlay, new TriggerArgs { Subject = c, Destroyed = true });
             if (wasEnemy)
             {
-                await Fire(Trigger.AfterEnemyDestroyed, new TriggerArgs { Subject = c, Attackers = attackers ?? new List<Card>() });
+                await Fire(Trigger.AfterEnemyDestroyed, new TriggerArgs { Subject = c, Attackers = attackers ?? new List<Card>(), WasInPlay = wasInPlay });
                 await CheckQuestComplete();
             }
         }
@@ -444,7 +568,7 @@ namespace Lanternbearers.Engine
             foreach (var c in Hand.ToList())
             {
                 var d = c.Def;
-                if (Phase == Phase.Planning && d.Type == CardType.Ally && CanAfford(c) && !UniqueInPlay(d))
+                if (Phase == Phase.Planning && d.Type == CardType.Ally && CanAfford(c) && !UniqueInPlay(d) && AllyLimitAllows)
                 {
                     list.Add(new GameAction
                     {
@@ -452,6 +576,7 @@ namespace Lanternbearers.Engine
                         Execute = async () =>
                         {
                             if (!await PayCost(c)) return;
+                            AlliesPlayedThisRound++;
                             await PutIntoPlay(c);
                         }
                     });
@@ -497,6 +622,8 @@ namespace Lanternbearers.Engine
             return list;
         }
 
+        private bool AllyLimitAllows => Quest == null || Quest.Def.AllyLimitPerRound <= 0 || AlliesPlayedThisRound < Quest.Def.AllyLimitPerRound;
+
         public async Task ActionWindow(string where)
         {
             Step = where;
@@ -525,13 +652,19 @@ namespace Lanternbearers.Engine
 
         public async Task Fire(Trigger t, TriggerArgs args)
         {
-            // Cards in play (player and encounter)
-            foreach (var src in AllInPlay().ToList())
+            // Cards in play (player and encounter). An explored location or destroyed enemy
+            // still resolves its own "after ..." abilities although it has just left play - but only
+            // if it was in play when that happened (RRG 1.58: a Forced effect must be in play to trigger).
+            var sources = AllInPlay().ToList();
+            var leftPlay = t is Trigger.AfterLocationExplored or Trigger.AfterEnemyDestroyed && args.WasInPlay && args.Subject != null && !sources.Contains(args.Subject)
+                ? args.Subject : null;
+            if (leftPlay != null) sources.Add(leftPlay);
+            foreach (var src in sources)
             {
                 foreach (var ab in src.Def.Triggers.Where(x => x.On == t && !x.FromHand))
                 {
                     if (args.Cancelled) return;
-                    if (!InPlayStill(src)) break;
+                    if (src != leftPlay && !InPlayStill(src)) break;
                     if (ab.Condition != null && !ab.Condition(this, src, args)) continue;
                     if (ab.Forced)
                     {
@@ -645,8 +778,7 @@ namespace Lanternbearers.Engine
             }
 
             _questStageIndex = 0;
-            Quest = QuestDeck[0];
-            QuestDeck.RemoveAt(0);
+            Quest = TakeNextStage();
             Quest.Zone = Zone.ActiveQuest;
             Write($"Quest: {Quest.Name}");
             if (Quest.Def.Setup != null) await Quest.Def.Setup(this, Quest);
@@ -677,15 +809,18 @@ namespace Lanternbearers.Engine
                 foreach (var f in effects) await f();
             }
             ClearTemp(Duration.Phase);
+            StagingThreatBonus = 0;
             foreach (var c in AllInPlay()) c.PhaseCounters.Clear();
             CannotAttackThisPhase.Clear();
             MultipleDefendersThisPhase = false;
+            await CheckQuestComplete();
         }
 
         private async Task ResourcePhase()
         {
             Phase = Phase.Resource;
             Step = "Resource phase";
+            AlliesPlayedThisRound = 0;
             foreach (var h in Heroes) h.Resources++;
             Write("Each hero gathers 1 supply.");
             await Fire(Trigger.ResourcePhase, new TriggerArgs());
@@ -704,6 +839,8 @@ namespace Lanternbearers.Engine
         private async Task QuestPhase()
         {
             Phase = Phase.Quest;
+            Step = "Quest phase";
+            await Fire(Trigger.QuestPhaseBegins, new TriggerArgs());
             Step = "Quest phase: commit";
             var ready = Characters.Where(c => !c.Exhausted).ToList();
             var chosen = await ChooseMany($"Quest phase: choose characters to commit to the quest (they exhaust). Staging threat: {StagingThreat}.",
@@ -714,22 +851,34 @@ namespace Lanternbearers.Engine
             await ActionWindow("Quest phase (after commit)");
 
             Step = "Quest phase: staging";
-            await RevealEncounterCard();
+            if (SkipStagingStep) Write("The staging step is skipped.");
+            else
+            {
+                int reveals = 1 + (Quest?.Def.ExtraStagingReveals ?? 0);
+                for (int i = 0; i < reveals; i++) await RevealEncounterCard();
+            }
             await ActionWindow("Quest phase (after staging)");
 
             Step = "Quest phase: resolution";
             int res = QuestingResolve, thr = StagingThreat;
             Write($"Quest resolution: resolve {res} vs threat {thr}.");
             if (res > thr) await PlaceQuestingProgress(res - thr);
-            else if (thr > res) RaiseDread(thr - res, "failed to overcome the threat");
+            else if (thr > res)
+            {
+                RaiseDread(thr - res, "failed to overcome the threat");
+                await Fire(Trigger.QuestFailed, new TriggerArgs { Amount = thr - res });
+            }
             foreach (var c in Characters) c.Committed = false;
             await EndPhase();
         }
 
         public async Task RevealEncounterCard()
         {
+            // Safety cap: a surge chain that can never end (e.g. only shuffle-back surge cards left) stops here.
+            int chain = 0;
             do
             {
+                if (++chain > 20) { _pendingSurge = false; Write("The surge chain fizzles out."); break; }
                 _pendingSurge = false;
                 if (EncounterDeck.Count == 0)
                 {
@@ -740,9 +889,9 @@ namespace Lanternbearers.Engine
                 }
                 var card = EncounterDeck[0];
                 Write($"Revealed: {card.Name} ({card.Type})");
-                if (card.Def.Surge) _pendingSurge = true;
                 if (card.Type == CardType.Treachery)
                 {
+                    if (card.Def.Surge) _pendingSurge = true;
                     RemoveFromCurrentZone(card);
                     card.Zone = Zone.None;
                     var args = new TriggerArgs { Subject = card };
@@ -758,9 +907,27 @@ namespace Lanternbearers.Engine
                 }
                 else
                 {
+                    if (card.IsEnemy)
+                    {
+                        // Effects like Tobrik Stonejaw's resolve as the enemy is revealed, before its keywords
+                        // and "when revealed" effects. An enemy destroyed here never enters play, so none of
+                        // its effects (surge, doomed, when revealed, forced) resolve.
+                        RemoveFromCurrentZone(card);
+                        card.Zone = Zone.Revealing;
+                        UIReveal = card;
+                        await Fire(Trigger.EnemyRevealing, new TriggerArgs { Subject = card });
+                        UIReveal = null;
+                        if (card.Zone != Zone.Revealing)
+                        {
+                            Write($"{card.Name} is destroyed before it enters play; none of its effects resolve.");
+                            continue;
+                        }
+                    }
+                    if (card.Def.Surge) _pendingSurge = true;
                     MoveTo(card, Zone.Staging);
                     await UI.Pause(500);
                     await Fire(Trigger.AfterEncounterRevealed, new TriggerArgs { Subject = card });
+                    if (card.Type == CardType.Objective && card.Def.Guarded) await GuardObjective(card);
                     if (card.Def.Doomed > 0) RaiseDread(card.Def.Doomed, "doomed");
                     if (card.Def.WhenRevealed != null)
                     {
@@ -801,7 +968,7 @@ namespace Lanternbearers.Engine
             {
                 Write($"{loc.Name} is explored.");
                 DiscardCard(loc);
-                await Fire(Trigger.AfterLocationExplored, new TriggerArgs { Subject = loc });
+                await Fire(Trigger.AfterLocationExplored, new TriggerArgs { Subject = loc, WasInPlay = true });
                 await CheckQuestComplete();
             }
         }
@@ -811,6 +978,7 @@ namespace Lanternbearers.Engine
             if (n <= 0 || Quest == null) return;
             Quest.Progress += n;
             Write($"{n} progress placed on the quest ({Quest.Progress}/{Get(Quest, Stat.QuestPoints)}).");
+            await Fire(Trigger.AfterQuestProgress, new TriggerArgs { Subject = Quest, Amount = n });
             await CheckQuestComplete();
         }
 
@@ -827,13 +995,34 @@ namespace Lanternbearers.Engine
                 throw new GameOverException(true, "The final stage is complete. Victory! Your lanterns burn bright.");
             }
             Quest.Zone = Zone.None;
-            Quest = QuestDeck[0];
-            QuestDeck.RemoveAt(0);
+            Quest = TakeNextStage();
             Quest.Zone = Zone.ActiveQuest;
             Write($"Advancing to: {Quest.Name}");
             await UI.Pause(500);
             if (Quest.Def.WhenRevealed != null) await Quest.Def.WhenRevealed(this, Quest);
             await CheckQuestComplete();
+        }
+
+        /// <summary>
+        /// Takes the next quest stage. Several stages with the same stage number are alternatives:
+        /// one of them is chosen at random and the others are removed from the game.
+        /// </summary>
+        private Card TakeNextStage()
+        {
+            var label = QuestDeck[0].Def.StageLabel;
+            var alts = QuestDeck.Where(q => q.Def.StageLabel == label).ToList();
+            var pick = alts[Rng.Next(alts.Count)];
+            foreach (var a in alts) QuestDeck.Remove(a);
+            if (alts.Count > 1) Write($"The path forks... (stage {label} chosen at random from {alts.Count} options)");
+            return pick;
+        }
+
+        public void RemoveQuestProgress(int n, string why = null)
+        {
+            if (Quest == null || n <= 0 || Quest.Progress == 0) return;
+            int r = Math.Min(n, Quest.Progress);
+            Quest.Progress -= r;
+            Write($"{r} progress removed from the quest{(why != null ? " (" + why + ")" : "")}.");
         }
 
         private async Task TravelPhase()
@@ -843,9 +1032,12 @@ namespace Lanternbearers.Engine
             if (ActiveLocation == null)
             {
                 var locs = Staging.Where(c => c.IsLocation && (c.Def.CanTravel?.Invoke(this, c) ?? true)).ToList();
+                var forced = locs.Where(c => c.Def.MustTravel).ToList();
                 if (locs.Count > 0)
                 {
-                    var loc = await ChooseOneOrNone("Travel phase: you may travel to a location in the staging area.", locs, "Don't travel");
+                    var loc = forced.Count > 0
+                        ? await ChooseOne("Travel phase: you must travel to this location.", forced)
+                        : await ChooseOneOrNone("Travel phase: you may travel to a location in the staging area.", locs, "Don't travel");
                     if (loc != null)
                     {
                         bool ok = loc.Def.TravelCost == null || await loc.Def.TravelCost(this, loc);
@@ -866,14 +1058,15 @@ namespace Lanternbearers.Engine
         {
             Phase = Phase.Encounter;
             Step = "Encounter phase";
-            var enemies = Staging.Where(c => c.IsEnemy).ToList();
+            var enemies = Staging.Where(c => c.IsEnemy && (c.Def.CanOptionallyEngage?.Invoke(this, c) ?? true)).ToList();
             if (enemies.Count > 0)
             {
                 var e = await ChooseOneOrNone($"Encounter phase: you may optionally engage one enemy in the staging area (your dread: {Dread}).", enemies, "Engage none");
                 if (e != null) await Engage(e);
             }
             // Engagement checks
-            while (true)
+            if (Quest?.Def.NoEngagementChecks == true) Write("No engagement checks are made this phase.");
+            else while (true)
             {
                 var cand = Staging.Where(c => c.IsEnemy && Get(c, Stat.Engagement) <= Dread)
                     .OrderByDescending(c => Get(c, Stat.Engagement)).FirstOrDefault();
@@ -897,18 +1090,16 @@ namespace Lanternbearers.Engine
         {
             Phase = Phase.Combat;
             Step = "Combat phase";
-            if (Engaged.Count == 0) { await EndPhase(); return; }
+            if (Engaged.Count == 0)
+            {
+                await Fire(Trigger.EndOfCombatPhase, new TriggerArgs());
+                await EndPhase();
+                return;
+            }
 
             // Deal shadow cards
             foreach (var e in Engaged.OrderByDescending(x => Get(x, Stat.Engagement)).ToList())
-            {
-                if (EncounterDeck.Count == 0) break;
-                var s = EncounterDeck[0];
-                RemoveFromCurrentZone(s);
-                s.Zone = Zone.Shadow;
-                s.FaceDown = true;
-                e.ShadowCard = s;
-            }
+                if (!DealShadowCard(e)) break;
             await ActionWindow("Combat phase (shadow cards dealt)");
 
             // Enemy attacks
@@ -925,7 +1116,7 @@ namespace Lanternbearers.Engine
             var attacked = new HashSet<Card>();
             while (true)
             {
-                var readyChars = Characters.Where(c => !c.Exhausted).ToList();
+                var readyChars = Characters.Where(c => !c.Exhausted && CanAttackOrDefend(c)).ToList();
                 var targets = Engaged.Where(x => !attacked.Contains(x)).ToList();
                 if (readyChars.Any(c => c.Def.AttacksStaging))
                     targets.AddRange(Staging.Where(x => x.IsEnemy && !attacked.Contains(x)));
@@ -943,13 +1134,9 @@ namespace Lanternbearers.Engine
             }
 
             // Discard shadow cards
-            foreach (var e in Engaged)
-            {
-                if (e.ShadowCard == null) continue;
-                var s = e.ShadowCard; e.ShadowCard = null; s.FaceDown = false;
-                MoveTo(s, Zone.EncounterDiscard);
-            }
+            foreach (var e in Engaged.ToList()) DiscardShadowCards(e);
             await ActionWindow("Combat phase (end)");
+            await Fire(Trigger.EndOfCombatPhase, new TriggerArgs());
             await EndPhase();
         }
 
@@ -980,7 +1167,7 @@ namespace Lanternbearers.Engine
             Step = $"{enemy.Name} attacks";
             var ctx = new AttackContext { Enemy = enemy };
             await Fire(Trigger.EnemyAttacks, new TriggerArgs { Subject = enemy, Enemy = enemy, Attack = ctx });
-            var ready = Characters.Where(c => !c.Exhausted).ToList();
+            var ready = Characters.Where(c => !c.Exhausted && CanAttackOrDefend(c)).ToList();
             var defs = new List<Card>();
             if (MultipleDefendersThisPhase)
                 defs = await ChooseMany($"{enemy.Name} attacks (might {Get(enemy, Stat.Might)}). Choose any number of defenders, or none for an undefended attack.",
@@ -1002,9 +1189,12 @@ namespace Lanternbearers.Engine
             }
             else Write($"{enemy.Name}'s attack is undefended!");
 
-            if (withShadow && enemy.ShadowCard != null)
+            // Shadow effects may deal further shadow cards, which are resolved too.
+            while (withShadow && enemy.Zone == Zone.Engaged)
             {
-                var s = enemy.ShadowCard;
+                var s = enemy.ShadowCards.FirstOrDefault(x => !ctx.Shadows.Contains(x));
+                if (s == null) break;
+                ctx.Shadows.Add(s);
                 s.FaceDown = false;
                 Write($"Shadow card: {s.Name}{(s.Def.Shadow != null ? " - " + s.Def.ShadowText : " (no shadow effect)")}");
                 await UI.Pause(700);
@@ -1013,7 +1203,11 @@ namespace Lanternbearers.Engine
                     var sa = new TriggerArgs { Subject = s, Enemy = enemy, Attack = ctx };
                     await Fire(Trigger.BeforeShadow, sa);
                     if (sa.Cancelled) Write($"The shadow effect of {s.Name} is cancelled.");
-                    else await s.Def.Shadow(this, s, ctx);
+                    else
+                    {
+                        await s.Def.Shadow(this, s, ctx);
+                        await Fire(Trigger.AfterShadowResolved, new TriggerArgs { Subject = s, Enemy = enemy, Attack = ctx });
+                    }
                 }
             }
 
@@ -1029,7 +1223,7 @@ namespace Lanternbearers.Engine
                     Write($"Attack: might {might} vs guard {guard}.");
                     var defender = standing.Count == 1 || dmg == 0 ? standing[0]
                         : await ChooseOne($"Choose a defender to take {dmg} damage.", standing);
-                    if (dmg > 0) await DealDamage(defender, dmg);
+                    if (dmg > 0) await DealCombatDamage(enemy, defender, dmg);
                     else Write("The attack is blocked completely.");
                     foreach (var d in standing)
                         await Fire(Trigger.AfterDefend, new TriggerArgs { Subject = d, Enemy = enemy, Attack = ctx });
@@ -1037,17 +1231,43 @@ namespace Lanternbearers.Engine
                 else if (ctx.Defender == null && ctx.Defenders.Count == 0)
                 {
                     var hero = await ChooseOne($"Undefended attack: choose a hero to take {might} damage.", Heroes);
-                    if (hero != null) await DealDamage(hero, might);
+                    if (hero != null) await DealCombatDamage(enemy, hero, might);
                 }
+                if (enemy.Zone == Zone.Engaged)
+                    await Fire(Trigger.AfterEnemyAttack, new TriggerArgs { Subject = enemy, Enemy = enemy, Attack = ctx });
             }
             ClearTemp(Duration.Attack);
+
+            while (_queuedAttacks.Count > 0)
+            {
+                var next = _queuedAttacks[0];
+                _queuedAttacks.RemoveAt(0);
+                if (next.Zone != Zone.Engaged) continue;
+                DealShadowCard(next);
+                await ResolveEnemyAttack(next, true);
+            }
+        }
+
+        private async Task DealCombatDamage(Card enemy, Card target, int dmg)
+        {
+            int remaining = Math.Max(0, Get(target, Stat.Health) - target.Damage);
+            await DealDamage(target, dmg);
+            if (enemy.Def.ExcessDamageToDread && dmg > remaining)
+                RaiseDread(dmg - remaining, $"{enemy.Name}'s excess damage");
         }
 
         private async Task RefreshPhase()
         {
             Phase = Phase.Refresh;
             Step = "Refresh phase";
-            foreach (var c in PlayArea) { c.Exhausted = false; foreach (var a in c.Attachments) a.Exhausted = false; }
+            foreach (var c in PlayArea.ToList())
+            {
+                bool ready = true;
+                foreach (var a in c.Attachments.ToList())
+                    if (c.Exhausted && a.Def.RefreshReadyCheck != null && !await a.Def.RefreshReadyCheck(this, a)) ready = false;
+                if (ready) c.Exhausted = false;
+                foreach (var a in c.Attachments) a.Exhausted = false;
+            }
             foreach (var c in Engaged) foreach (var a in c.Attachments) a.Exhausted = false;
             Write("All your cards ready.");
             RaiseDread(1, "refresh");

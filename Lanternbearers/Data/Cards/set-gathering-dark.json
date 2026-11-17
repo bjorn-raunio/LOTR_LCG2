@@ -1,0 +1,141 @@
+[
+  {
+    "Title": "Carrion Crows",
+    "Slug": "Carrion-Crows-LB",
+    "IsUnique": false,
+    "CardType": "Enemy",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "EngagementCost": "30",
+        "Threat": "1",
+        "Might": "1",
+        "Guard": "0",
+        "Health": "1"
+      },
+      "Traits": [
+        "Creature."
+      ],
+      "Keywords": [
+        "Surge."
+      ],
+      "Text": [
+        "Surge.",
+        "Forced: After Carrion Crows is destroyed, shuffle it back into the encounter deck."
+      ],
+      "Shadow": "Shadow: The attacking enemy gets +1 Might. (+2 Might instead if your dread is 35 or higher.)",
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Gathering Dark",
+      "EasyModeQuantity": 1,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 1,
+    "Quantity": 3,
+    "Artist": null
+  },
+  {
+    "Title": "Ill Storm",
+    "Slug": "Ill-Storm-LB",
+    "IsUnique": false,
+    "CardType": "Treachery",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {},
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "When revealed: If your dread is 35 or higher, deal 1 damage to each character you control."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Gathering Dark",
+      "EasyModeQuantity": 2,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 2,
+    "Quantity": 3,
+    "Artist": null
+  },
+  {
+    "Title": "Hunted by Shadow",
+    "Slug": "Hunted-by-Shadow-LB",
+    "IsUnique": false,
+    "CardType": "Treachery",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {},
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "When revealed: Raise your dread by 1 for each character you control that is not committed to the quest."
+      ],
+      "Shadow": "Shadow: Choose and return 1 exhausted ally you control to your hand. If you control no exhausted allies, raise your dread by 3.",
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Gathering Dark",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 3,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Creeping Fog",
+    "Slug": "Creeping-Fog-LB",
+    "IsUnique": false,
+    "CardType": "Treachery",
+    "CardSubType": "None",
+    "Sphere": null,
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {},
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "When revealed: Each location in the staging area gets +1 Threat until the end of the phase. Then, if your dread is 35 or higher, choose and discard 1 card from your hand."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": {
+      "EncounterSet": "Gathering Dark",
+      "EasyModeQuantity": 0,
+      "IncludedEncounterSets": [],
+      "StageNumber": null,
+      "StageLetter": null
+    },
+    "Number": 4,
+    "Quantity": 2,
+    "Artist": null
+  }
+]

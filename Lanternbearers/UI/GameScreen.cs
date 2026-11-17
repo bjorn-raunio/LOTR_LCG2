@@ -109,8 +109,8 @@ namespace Lanternbearers.UI
                 _hits.Add((a, new Rectangle(r.X, ty, r.Width, TAB - 1)));
                 ty += TAB;
             }
-            if (c.ShadowCard != null)
-                _hits.Add((c.ShadowCard, new Rectangle(r.Right + 4, r.Y + 30, 58, 80)));
+            for (int i = 0; i < c.ShadowCards.Count; i++)
+                _hits.Add((c.ShadowCards[i], new Rectangle(r.Right + 4 + i * 14, r.Y + 30 + i * 10, 58, 80)));
         }
 
         private void BuildLayout()
@@ -380,7 +380,9 @@ namespace Lanternbearers.UI
             g.Text(g.Small, g.Fit(g.Small, e.Step, StatusRect.Width - 20), new Vector2(StatusRect.X + 10, StatusRect.Y + 60), Color.LightGray);
             string q = e.Quest != null ? $"Quest: {e.Quest.Progress}/{e.Get(e.Quest, Stat.QuestPoints)} progress" : "";
             g.Text(g.Small, $"Questing resolve {e.QuestingResolve} vs threat {e.StagingThreat}   {q}", new Vector2(StatusRect.X + 10, StatusRect.Y + 78), new Color(180, 220, 255));
-            g.Text(g.Small, g.Fit(g.Small, e.Scenario?.Name ?? "", StatusRect.Width - 20), new Vector2(StatusRect.X + 10, StatusRect.Y + 96), new Color(200, 190, 150));
+            string extra = (e.Prisoner != null ? $"  |  Prisoner: {e.Prisoner.Name}" : "")
+                + (e.DeckConditions.Count > 0 ? $"  |  On your deck: {string.Join(", ", e.DeckConditions.Select(x => x.Name))}" : "");
+            g.Text(g.Small, g.Fit(g.Small, (e.Scenario?.Name ?? "") + extra, StatusRect.Width - 20), new Vector2(StatusRect.X + 10, StatusRect.Y + 96), new Color(200, 190, 150));
             foreach (var b in _uiButtons) b.Draw(g, input.Mouse);
 
             // Log
