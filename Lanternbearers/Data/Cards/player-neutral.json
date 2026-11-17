@@ -1,0 +1,37 @@
+[
+  {
+    "Title": "Orlen the Lamplighter",
+    "Slug": "Orlen-the-Lamplighter-LB",
+    "IsUnique": true,
+    "CardType": "Ally",
+    "CardSubType": "None",
+    "Sphere": "Neutral",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "5",
+        "Resolve": "4",
+        "Might": "4",
+        "Guard": "4",
+        "Health": "4"
+      },
+      "Traits": [
+        "Wanderer."
+      ],
+      "Keywords": [],
+      "Text": [
+        "At the end of the round, discard Orlen the Lamplighter from play.",
+        "Response: After Orlen the Lamplighter enters play, choose one: draw 3 cards, deal 4 damage to an enemy in play, or reduce your dread by 5."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 73,
+    "Quantity": 4,
+    "Artist": null
+  }
+]

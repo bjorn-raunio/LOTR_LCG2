@@ -1,0 +1,591 @@
+[
+  {
+    "Title": "Corwin Ashvale",
+    "Slug": "Corwin-Ashvale-LB",
+    "IsUnique": true,
+    "CardType": "Hero",
+    "CardSubType": "None",
+    "Sphere": "Crown",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "DreadCost": "12",
+        "Resolve": "2",
+        "Might": "3",
+        "Guard": "2",
+        "Health": "5"
+      },
+      "Traits": [
+        "Noble.",
+        "Ranger.",
+        "Wayfarer."
+      ],
+      "Keywords": [
+        "Sentinel."
+      ],
+      "Text": [
+        "Sentinel.",
+        "Response: After Corwin Ashvale commits to a quest, spend 1 supply from Corwin Ashvale's pool to ready this hero."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 1,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Edric Marrow",
+    "Slug": "Edric-Marrow-LB",
+    "IsUnique": true,
+    "CardType": "Hero",
+    "CardSubType": "None",
+    "Sphere": "Crown",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "DreadCost": "8",
+        "Resolve": "1",
+        "Might": "2",
+        "Guard": "1",
+        "Health": "4"
+      },
+      "Traits": [
+        "Marchfolk.",
+        "Noble.",
+        "Warrior."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Response: After Edric Marrow commits to a quest, choose a hero committed to that quest. Add 1 supply to that hero's pool."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 2,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Borra Flintmantle",
+    "Slug": "Borra-Flintmantle-LB",
+    "IsUnique": true,
+    "CardType": "Hero",
+    "CardSubType": "None",
+    "Sphere": "Crown",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "DreadCost": "9",
+        "Resolve": "2",
+        "Might": "2",
+        "Guard": "1",
+        "Health": "4"
+      },
+      "Traits": [
+        "Hillfolk.",
+        "Noble."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Response: After Borra Flintmantle suffers damage, add 1 supply to Borra Flintmantle's pool for each damage just suffered."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 3,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Greywall Watchman",
+    "Slug": "Greywall-Watchman-LB",
+    "IsUnique": false,
+    "CardType": "Ally",
+    "CardSubType": "None",
+    "Sphere": "Crown",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "2",
+        "Resolve": "1",
+        "Might": "1",
+        "Guard": "0",
+        "Health": "2"
+      },
+      "Traits": [
+        "Greywall.",
+        "Warrior."
+      ],
+      "Keywords": [],
+      "Text": [],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 4,
+    "Quantity": 3,
+    "Artist": null
+  },
+  {
+    "Title": "Oren Valecrest",
+    "Slug": "Oren-Valecrest-LB",
+    "IsUnique": true,
+    "CardType": "Ally",
+    "CardSubType": "None",
+    "Sphere": "Crown",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "4",
+        "Resolve": "2",
+        "Might": "1",
+        "Guard": "2",
+        "Health": "3"
+      },
+      "Traits": [
+        "Greywall.",
+        "Noble.",
+        "Ranger."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Action: Exhaust Oren Valecrest. Each character you control gets +1 Resolve until the end of the phase."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 5,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Heir of the Waystones",
+    "Slug": "Heir-of-the-Waystones-LB",
+    "IsUnique": false,
+    "CardType": "Ally",
+    "CardSubType": "None",
+    "Sphere": "Crown",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "3",
+        "Resolve": "0",
+        "Might": "2",
+        "Guard": "0",
+        "Health": "2"
+      },
+      "Traits": [
+        "Wayfarer."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Response: After Heir of the Waystones enters play, choose an enemy in the staging area and engage it."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 6,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Marchland Outrider",
+    "Slug": "Marchland-Outrider-LB",
+    "IsUnique": false,
+    "CardType": "Ally",
+    "CardSubType": "None",
+    "Sphere": "Crown",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "1",
+        "Resolve": "0",
+        "Might": "0",
+        "Guard": "1",
+        "Health": "1"
+      },
+      "Traits": [
+        "Marchfolk.",
+        "Scout."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Response: After Marchland Outrider enters play, place 1 progress on a location."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 7,
+    "Quantity": 3,
+    "Artist": null
+  },
+  {
+    "Title": "Thornwood Archer",
+    "Slug": "Thornwood-Archer-LB",
+    "IsUnique": false,
+    "CardType": "Ally",
+    "CardSubType": "None",
+    "Sphere": "Crown",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "3",
+        "Resolve": "1",
+        "Might": "2",
+        "Guard": "0",
+        "Health": "1"
+      },
+      "Traits": [
+        "Archer.",
+        "Woodfolk."
+      ],
+      "Keywords": [
+        "Ranged."
+      ],
+      "Text": [
+        "Ranged."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 8,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Stonehold Raidbreaker",
+    "Slug": "Stonehold-Raidbreaker-LB",
+    "IsUnique": false,
+    "CardType": "Ally",
+    "CardSubType": "None",
+    "Sphere": "Crown",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "4",
+        "Resolve": "0",
+        "Might": "2",
+        "Guard": "1",
+        "Health": "3"
+      },
+      "Traits": [
+        "Hillfolk.",
+        "Warrior."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Response: After Stonehold Raidbreaker enters play, deal 1 damage to each Raider enemy in play."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 9,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Hroth Emberfist",
+    "Slug": "Hroth-Emberfist-LB",
+    "IsUnique": true,
+    "CardType": "Ally",
+    "CardSubType": "None",
+    "Sphere": "Crown",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "6",
+        "Resolve": "2",
+        "Might": "2",
+        "Guard": "1",
+        "Health": "4"
+      },
+      "Traits": [
+        "Hillfolk.",
+        "Warrior."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Response: After a Hillfolk hero you control leaves play, put Hroth Emberfist into play from your hand."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 10,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Seneschal of Greywall",
+    "Slug": "Seneschal-of-Greywall-LB",
+    "IsUnique": true,
+    "CardType": "Attachment",
+    "CardSubType": "None",
+    "Sphere": "Crown",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "2"
+      },
+      "Traits": [
+        "Greywall.",
+        "Title."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Attach to a hero. Attached hero gains the Greywall trait.",
+        "Action: Exhaust Seneschal of Greywall to add 2 supply to attached hero's pool."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 11,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Moonwell Pendant",
+    "Slug": "Moonwell-Pendant-LB",
+    "IsUnique": true,
+    "CardType": "Attachment",
+    "CardSubType": "None",
+    "Sphere": "Crown",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "2"
+      },
+      "Traits": [
+        "Artifact.",
+        "Item."
+      ],
+      "Keywords": [
+        "Restricted."
+      ],
+      "Text": [
+        "Attach to a hero. Restricted.",
+        "Attached hero gets +2 Resolve. If attached to Corwin Ashvale, that hero can also pay for Hearth cards."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 12,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Keep Watch",
+    "Slug": "Keep-Watch-LB",
+    "IsUnique": false,
+    "CardType": "Event",
+    "CardSubType": "None",
+    "Sphere": "Crown",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "1"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Action: Ready an ally."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 13,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Shared Burden",
+    "Slug": "Shared-Burden-LB",
+    "IsUnique": false,
+    "CardType": "Event",
+    "CardSubType": "None",
+    "Sphere": "Crown",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "0"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Action: Exhaust a hero you control to ready a different hero."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 14,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "For Greywall!",
+    "Slug": "For-Greywall-LB",
+    "IsUnique": false,
+    "CardType": "Event",
+    "CardSubType": "None",
+    "Sphere": "Crown",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "2"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Action: Until the end of the phase, each character gets +1 Might. Each Greywall character also gets +1 Guard until the end of the phase."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 15,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Sudden Sally",
+    "Slug": "Sudden-Sally-LB",
+    "IsUnique": false,
+    "CardType": "Event",
+    "CardSubType": "None",
+    "Sphere": "Crown",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "1"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Action: Put an ally from your hand into play. At the end of the phase, if that ally is still in play, return it to your hand."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 16,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Remembered Deeds",
+    "Slug": "Remembered-Deeds-LB",
+    "IsUnique": false,
+    "CardType": "Event",
+    "CardSubType": "None",
+    "Sphere": "Crown",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "1"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Response: After an ally leaves play, draw 2 cards."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 17,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Iron Will",
+    "Slug": "Iron-Will-LB",
+    "IsUnique": false,
+    "CardType": "Event",
+    "CardSubType": "None",
+    "Sphere": "Crown",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "5"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Action: Ready each character you control."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 18,
+    "Quantity": 1,
+    "Artist": null
+  }
+]

@@ -1,0 +1,573 @@
+[
+  {
+    "Title": "Aldous Greymantle",
+    "Slug": "Aldous-Greymantle-LB",
+    "IsUnique": true,
+    "CardType": "Hero",
+    "CardSubType": "None",
+    "Sphere": "Sage",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "DreadCost": "8",
+        "Resolve": "1",
+        "Might": "1",
+        "Guard": "3",
+        "Health": "3"
+      },
+      "Traits": [
+        "Greywall.",
+        "Noble.",
+        "Regent."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Action: Exhaust Aldous Greymantle to look at the top card of the encounter deck. You may move it to the bottom of the deck."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 55,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Caelith the Radiant",
+    "Slug": "Caelith-the-Radiant-LB",
+    "IsUnique": true,
+    "CardType": "Hero",
+    "CardSubType": "None",
+    "Sphere": "Sage",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "DreadCost": "12",
+        "Resolve": "3",
+        "Might": "3",
+        "Guard": "1",
+        "Health": "5"
+      },
+      "Traits": [
+        "Elder.",
+        "Noble.",
+        "Warrior."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Action: Spend 1 supply from Caelith the Radiant's pool to heal 1 damage from a character. (Limit once per round.)"
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 56,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Wren Halloway",
+    "Slug": "Wren-Halloway-LB",
+    "IsUnique": true,
+    "CardType": "Hero",
+    "CardSubType": "None",
+    "Sphere": "Sage",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "DreadCost": "10",
+        "Resolve": "2",
+        "Might": "2",
+        "Guard": "2",
+        "Health": "4"
+      },
+      "Traits": [
+        "Ranger.",
+        "Wayfarer."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Action: Exhaust Wren Halloway to draw 2 cards. (Limit once per round.)"
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 57,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Springwater Healer",
+    "Slug": "Springwater-Healer-LB",
+    "IsUnique": false,
+    "CardType": "Ally",
+    "CardSubType": "None",
+    "Sphere": "Sage",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "3",
+        "Resolve": "1",
+        "Might": "0",
+        "Guard": "0",
+        "Health": "1"
+      },
+      "Traits": [
+        "Woodfolk."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Action: Exhaust Springwater Healer to heal up to 2 damage from a hero."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 58,
+    "Quantity": 3,
+    "Artist": null
+  },
+  {
+    "Title": "Stonehold Smith",
+    "Slug": "Stonehold-Smith-LB",
+    "IsUnique": false,
+    "CardType": "Ally",
+    "CardSubType": "None",
+    "Sphere": "Sage",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "2",
+        "Resolve": "1",
+        "Might": "1",
+        "Guard": "1",
+        "Health": "3"
+      },
+      "Traits": [
+        "Craftsman.",
+        "Hillfolk."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Response: After you play Stonehold Smith, return the topmost attachment in your discard pile to your hand."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 59,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Ilvan Reedsong",
+    "Slug": "Ilvan-Reedsong-LB",
+    "IsUnique": true,
+    "CardType": "Ally",
+    "CardSubType": "None",
+    "Sphere": "Sage",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "1",
+        "Resolve": "1",
+        "Might": "1",
+        "Guard": "0",
+        "Health": "1"
+      },
+      "Traits": [
+        "Woodfolk."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Action: Exhaust Ilvan Reedsong to look at the top card of the encounter deck."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 60,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Deepvein Miner",
+    "Slug": "Deepvein-Miner-LB",
+    "IsUnique": false,
+    "CardType": "Ally",
+    "CardSubType": "None",
+    "Sphere": "Sage",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "2",
+        "Resolve": "0",
+        "Might": "1",
+        "Guard": "1",
+        "Health": "2"
+      },
+      "Traits": [
+        "Hillfolk."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Response: After Deepvein Miner enters play, choose and discard a Condition attachment in play."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 61,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Cadoc Brightlay",
+    "Slug": "Cadoc-Brightlay-LB",
+    "IsUnique": true,
+    "CardType": "Ally",
+    "CardSubType": "None",
+    "Sphere": "Sage",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "2",
+        "Resolve": "1",
+        "Might": "0",
+        "Guard": "0",
+        "Health": "2"
+      },
+      "Traits": [
+        "Marchfolk.",
+        "Minstrel."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Action: Exhaust Cadoc Brightlay to draw 1 card."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 62,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Pit Trap",
+    "Slug": "Pit-Trap-LB",
+    "IsUnique": false,
+    "CardType": "Attachment",
+    "CardSubType": "None",
+    "Sphere": "Sage",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "3"
+      },
+      "Traits": [
+        "Item.",
+        "Trap."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Attach to an enemy engaged with you. Attached enemy cannot attack."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 63,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Warden of the Wood",
+    "Slug": "Warden-of-the-Wood-LB",
+    "IsUnique": false,
+    "CardType": "Attachment",
+    "CardSubType": "None",
+    "Sphere": "Sage",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "1"
+      },
+      "Traits": [
+        "Title."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Attach to a hero.",
+        "Action: Discard a card from your hand to give attached hero +1 Guard or +1 Resolve until the end of the phase. (Limit 3 times per phase.)"
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 64,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Grim Foresight",
+    "Slug": "Grim-Foresight-LB",
+    "IsUnique": false,
+    "CardType": "Attachment",
+    "CardSubType": "None",
+    "Sphere": "Sage",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "1"
+      },
+      "Traits": [
+        "Condition."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Attach to a hero. Attached hero gets -1 Resolve.",
+        "Response: Exhaust Grim Foresight to look at the shadow card dealt to an enemy attacking you."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 65,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Field Dressing",
+    "Slug": "Field-Dressing-LB",
+    "IsUnique": false,
+    "CardType": "Attachment",
+    "CardSubType": "None",
+    "Sphere": "Sage",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "3"
+      },
+      "Traits": [
+        "Skill."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Attach to a character.",
+        "Action: Exhaust Field Dressing to heal 2 damage from attached character."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 66,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Old Remedies",
+    "Slug": "Old-Remedies-LB",
+    "IsUnique": false,
+    "CardType": "Event",
+    "CardSubType": "None",
+    "Sphere": "Sage",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "2"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Action: Choose a character. Heal all damage from it."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 67,
+    "Quantity": 3,
+    "Artist": null
+  },
+  {
+    "Title": "Hoarded Knowledge",
+    "Slug": "Hoarded-Knowledge-LB",
+    "IsUnique": false,
+    "CardType": "Event",
+    "CardSubType": "None",
+    "Sphere": "Sage",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "3"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Action: Draw 3 cards."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 68,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Beast-Lore",
+    "Slug": "Beast-Lore-LB",
+    "IsUnique": false,
+    "CardType": "Event",
+    "CardSubType": "None",
+    "Sphere": "Sage",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "1"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Quest Action: Choose an enemy in the staging area. It does not contribute its Threat until the end of the phase."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 69,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Hidden Ways",
+    "Slug": "Hidden-Ways-LB",
+    "IsUnique": false,
+    "CardType": "Event",
+    "CardSubType": "None",
+    "Sphere": "Sage",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "1"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Quest Action: Choose a location in the staging area. It does not contribute its Threat until the end of the phase."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 70,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Seek the Signs",
+    "Slug": "Seek-the-Signs-LB",
+    "IsUnique": false,
+    "CardType": "Event",
+    "CardSubType": "None",
+    "Sphere": "Sage",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "X"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Action: Look at the top X cards of your deck. Add 1 of them to your hand and return the rest to the top of your deck."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 71,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Hearthfire Rest",
+    "Slug": "Hearthfire-Rest-LB",
+    "IsUnique": false,
+    "CardType": "Event",
+    "CardSubType": "None",
+    "Sphere": "Sage",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "5"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Action: Heal all damage from each hero you control."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 72,
+    "Quantity": 1,
+    "Artist": null
+  }
+]

@@ -1,0 +1,589 @@
+[
+  {
+    "Title": "Durgan Hammerfell",
+    "Slug": "Durgan-Hammerfell-LB",
+    "IsUnique": true,
+    "CardType": "Hero",
+    "CardSubType": "None",
+    "Sphere": "Blade",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "DreadCost": "11",
+        "Resolve": "2",
+        "Might": "2",
+        "Guard": "2",
+        "Health": "5"
+      },
+      "Traits": [
+        "Hillfolk.",
+        "Noble.",
+        "Warrior."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Durgan Hammerfell gets +1 Might for each damage on this hero."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 19,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Faelan Swiftbough",
+    "Slug": "Faelan-Swiftbough-LB",
+    "IsUnique": true,
+    "CardType": "Hero",
+    "CardSubType": "None",
+    "Sphere": "Blade",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "DreadCost": "9",
+        "Resolve": "1",
+        "Might": "3",
+        "Guard": "1",
+        "Health": "4"
+      },
+      "Traits": [
+        "Noble.",
+        "Warrior.",
+        "Woodfolk."
+      ],
+      "Keywords": [
+        "Ranged."
+      ],
+      "Text": [
+        "Ranged.",
+        "Response: After Faelan Swiftbough takes part in an attack that destroys an enemy, place 2 progress on the current quest."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 20,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Tobrik Stonejaw",
+    "Slug": "Tobrik-Stonejaw-LB",
+    "IsUnique": true,
+    "CardType": "Hero",
+    "CardSubType": "None",
+    "Sphere": "Blade",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "DreadCost": "9",
+        "Resolve": "1",
+        "Might": "2",
+        "Guard": "2",
+        "Health": "4"
+      },
+      "Traits": [
+        "Hillfolk.",
+        "Warrior."
+      ],
+      "Keywords": [],
+      "Text": [
+        "While Tobrik Stonejaw is committed to a quest, deal 1 damage to each enemy as it is revealed from the encounter deck."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 21,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Hillfolk Axeman",
+    "Slug": "Hillfolk-Axeman-LB",
+    "IsUnique": false,
+    "CardType": "Ally",
+    "CardSubType": "None",
+    "Sphere": "Blade",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "2",
+        "Resolve": "0",
+        "Might": "2",
+        "Guard": "1",
+        "Health": "2"
+      },
+      "Traits": [
+        "Hillfolk.",
+        "Warrior."
+      ],
+      "Keywords": [],
+      "Text": [],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 22,
+    "Quantity": 3,
+    "Artist": null
+  },
+  {
+    "Title": "Greywall Pikeman",
+    "Slug": "Greywall-Pikeman-LB",
+    "IsUnique": false,
+    "CardType": "Ally",
+    "CardSubType": "None",
+    "Sphere": "Blade",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "2",
+        "Resolve": "0",
+        "Might": "1",
+        "Guard": "1",
+        "Health": "1"
+      },
+      "Traits": [
+        "Greywall.",
+        "Warrior."
+      ],
+      "Keywords": [
+        "Sentinel."
+      ],
+      "Text": [
+        "Sentinel.",
+        "Response: After Greywall Pikeman is declared as a defender, deal 1 damage to the attacking enemy."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 23,
+    "Quantity": 3,
+    "Artist": null
+  },
+  {
+    "Title": "Marchland Horse-Archer",
+    "Slug": "Marchland-Horse-Archer-LB",
+    "IsUnique": false,
+    "CardType": "Ally",
+    "CardSubType": "None",
+    "Sphere": "Blade",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "3",
+        "Resolve": "0",
+        "Might": "2",
+        "Guard": "1",
+        "Health": "2"
+      },
+      "Traits": [
+        "Archer.",
+        "Marchfolk."
+      ],
+      "Keywords": [
+        "Ranged."
+      ],
+      "Text": [
+        "Ranged."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 24,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Ulfgar the Bearskin",
+    "Slug": "Ulfgar-the-Bearskin-LB",
+    "IsUnique": true,
+    "CardType": "Ally",
+    "CardSubType": "None",
+    "Sphere": "Blade",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "6",
+        "Resolve": "1",
+        "Might": "3",
+        "Guard": "3",
+        "Health": "6"
+      },
+      "Traits": [
+        "Skinchanger.",
+        "Warrior."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Action: Ulfgar the Bearskin gets +5 Might until the end of the phase. At the end of that phase, shuffle Ulfgar the Bearskin back into your deck. (Limit once per round.)"
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 25,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Oathsworn Blade",
+    "Slug": "Oathsworn-Blade-LB",
+    "IsUnique": false,
+    "CardType": "Attachment",
+    "CardSubType": "None",
+    "Sphere": "Blade",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "1"
+      },
+      "Traits": [
+        "Item.",
+        "Weapon."
+      ],
+      "Keywords": [
+        "Restricted."
+      ],
+      "Text": [
+        "Attach to a hero. Restricted.",
+        "Attached hero gets +1 Might while attacking a Raider.",
+        "Response: After attached hero attacks and destroys an enemy, place 1 progress on the current quest."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 26,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Greywall Plate",
+    "Slug": "Greywall-Plate-LB",
+    "IsUnique": false,
+    "CardType": "Attachment",
+    "CardSubType": "None",
+    "Sphere": "Blade",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "4"
+      },
+      "Traits": [
+        "Armor.",
+        "Item."
+      ],
+      "Keywords": [
+        "Restricted."
+      ],
+      "Text": [
+        "Attach to a hero. Restricted.",
+        "Attached hero gets +4 Health."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 27,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Hillfolk War-Axe",
+    "Slug": "Hillfolk-War-Axe-LB",
+    "IsUnique": false,
+    "CardType": "Attachment",
+    "CardSubType": "None",
+    "Sphere": "Blade",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "2"
+      },
+      "Traits": [
+        "Item.",
+        "Weapon."
+      ],
+      "Keywords": [
+        "Restricted."
+      ],
+      "Text": [
+        "Attach to a hero. Restricted.",
+        "Attached hero gets +1 Might (+2 Might instead if that hero is Hillfolk)."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 28,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Warhorn of the Watch",
+    "Slug": "Warhorn-of-the-Watch-LB",
+    "IsUnique": true,
+    "CardType": "Attachment",
+    "CardSubType": "None",
+    "Sphere": "Blade",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "1"
+      },
+      "Traits": [
+        "Artifact.",
+        "Item."
+      ],
+      "Keywords": [
+        "Restricted."
+      ],
+      "Text": [
+        "Attach to a hero. Restricted.",
+        "Response: After a character is destroyed, add 1 supply to attached hero's pool."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 29,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Practiced Form",
+    "Slug": "Practiced-Form-LB",
+    "IsUnique": false,
+    "CardType": "Event",
+    "CardSubType": "None",
+    "Sphere": "Blade",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "1"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Action: Choose a character. It gets +1 Might and +1 Guard until the end of the phase."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 30,
+    "Quantity": 3,
+    "Artist": null
+  },
+  {
+    "Title": "Volley",
+    "Slug": "Volley-LB",
+    "IsUnique": false,
+    "CardType": "Event",
+    "CardSubType": "None",
+    "Sphere": "Blade",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "1"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Action: Exhaust a Ranged character you control to deal 1 damage to each enemy engaged with you."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 31,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "False Opening",
+    "Slug": "False-Opening-LB",
+    "IsUnique": false,
+    "CardType": "Event",
+    "CardSubType": "None",
+    "Sphere": "Blade",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "1"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Combat Action: Choose an enemy engaged with you. It cannot attack you this phase."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 32,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Strike First",
+    "Slug": "Strike-First-LB",
+    "IsUnique": false,
+    "CardType": "Event",
+    "CardSubType": "None",
+    "Sphere": "Blade",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "1"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Action: Exhaust a character you control to have it attack an eligible enemy immediately."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 33,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Hedge of Pikes",
+    "Slug": "Hedge-of-Pikes-LB",
+    "IsUnique": false,
+    "CardType": "Event",
+    "CardSubType": "None",
+    "Sphere": "Blade",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "3"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "You must pay for this card with 1 supply from each of 3 different heroes.",
+        "Action: Enemies engaged with you cannot attack you this phase."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 34,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Punishing Blow",
+    "Slug": "Punishing-Blow-LB",
+    "IsUnique": false,
+    "CardType": "Event",
+    "CardSubType": "None",
+    "Sphere": "Blade",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "2"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Response: After a character is declared as a defender, deal 2 damage to the attacking enemy."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 35,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Close Ranks",
+    "Slug": "Close-Ranks-LB",
+    "IsUnique": false,
+    "CardType": "Event",
+    "CardSubType": "None",
+    "Sphere": "Blade",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "0"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Action: This phase, you may declare any number of eligible characters as defenders against each enemy attack."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 36,
+    "Quantity": 1,
+    "Artist": null
+  }
+]

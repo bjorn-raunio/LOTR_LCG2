@@ -1,0 +1,20 @@
+[
+  {
+    "Name": "The Fenwatch Crossing",
+    "EncounterSet": "The Fenwatch Crossing",
+    "Description": "Cross the drowned fens, reach the old watchtower and survive the Mire Hag. (Difficulty: easier)",
+    "SetAside": [
+      "Drowned-Watchtower-LB",
+      "Mire-Hag-LB"
+    ]
+  },
+  {
+    "Name": "The Burning of Harrowmere",
+    "EncounterSet": "The Burning of Harrowmere",
+    "Description": "Raiders torch the farmland around Harrowmere. Hold the road, reach the town gate and bring down their Warchief. (Difficulty: harder)",
+    "SetAside": [
+      "Raider-Warchief-LB",
+      "Harrowmere-Gate-LB"
+    ]
+  }
+]

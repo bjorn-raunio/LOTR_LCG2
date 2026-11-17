@@ -1,0 +1,554 @@
+[
+  {
+    "Title": "Maren Haldis",
+    "Slug": "Maren-Haldis-LB",
+    "IsUnique": true,
+    "CardType": "Hero",
+    "CardSubType": "None",
+    "Sphere": "Hearth",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "DreadCost": "9",
+        "Resolve": "4",
+        "Might": "1",
+        "Guard": "1",
+        "Health": "3"
+      },
+      "Traits": [
+        "Marchfolk.",
+        "Noble."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Action: Discard a card from your hand to give Maren Haldis +1 Resolve until the end of the phase. (Limit once per round.)"
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 37,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Ysolde Carrow",
+    "Slug": "Ysolde-Carrow-LB",
+    "IsUnique": true,
+    "CardType": "Hero",
+    "CardSubType": "None",
+    "Sphere": "Hearth",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "DreadCost": "7",
+        "Resolve": "1",
+        "Might": "1",
+        "Guard": "2",
+        "Health": "3"
+      },
+      "Traits": [
+        "Greywall.",
+        "Noble."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Response: Exhaust Ysolde Carrow to cancel the 'when revealed' effects of a treachery just revealed from the encounter deck. Then discard it and reveal the next encounter card in its place."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 38,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Garrick Thane",
+    "Slug": "Garrick-Thane-LB",
+    "IsUnique": true,
+    "CardType": "Hero",
+    "CardSubType": "None",
+    "Sphere": "Hearth",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "DreadCost": "8",
+        "Resolve": "1",
+        "Might": "2",
+        "Guard": "1",
+        "Health": "4"
+      },
+      "Traits": [
+        "Marchfolk.",
+        "Warrior."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Garrick Thane can attack enemies in the staging area when attacking alone, and gets +1 Might while doing so."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 39,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Restless Smallfolk",
+    "Slug": "Restless-Smallfolk-LB",
+    "IsUnique": false,
+    "CardType": "Ally",
+    "CardSubType": "None",
+    "Sphere": "Hearth",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "2",
+        "Resolve": "1",
+        "Might": "1",
+        "Guard": "1",
+        "Health": "2"
+      },
+      "Traits": [
+        "Smallfolk."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Action: Reduce your dread by 3 to give control of Restless Smallfolk to another player. Raise that player's dread by 3. (Limit once per round.)"
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 40,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Woodland Guide",
+    "Slug": "Woodland-Guide-LB",
+    "IsUnique": false,
+    "CardType": "Ally",
+    "CardSubType": "None",
+    "Sphere": "Hearth",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "3",
+        "Resolve": "1",
+        "Might": "1",
+        "Guard": "0",
+        "Health": "2"
+      },
+      "Traits": [
+        "Scout.",
+        "Woodfolk."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Response: After Woodland Guide commits to a quest, place 1 progress on the active location."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 41,
+    "Quantity": 3,
+    "Artist": null
+  },
+  {
+    "Title": "Waystone Tracker",
+    "Slug": "Waystone-Tracker-LB",
+    "IsUnique": false,
+    "CardType": "Ally",
+    "CardSubType": "None",
+    "Sphere": "Hearth",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "4",
+        "Resolve": "1",
+        "Might": "2",
+        "Guard": "2",
+        "Health": "3"
+      },
+      "Traits": [
+        "Ranger.",
+        "Wayfarer."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Response: After Waystone Tracker commits to a quest, place 1 progress on each location in the staging area."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 42,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Grace of the Lantern",
+    "Slug": "Grace-of-the-Lantern-LB",
+    "IsUnique": false,
+    "CardType": "Attachment",
+    "CardSubType": "None",
+    "Sphere": "Hearth",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "2"
+      },
+      "Traits": [
+        "Condition."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Attach to a hero. Attached hero gets +1 Resolve."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 43,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Quieted Ground",
+    "Slug": "Quieted-Ground-LB",
+    "IsUnique": false,
+    "CardType": "Attachment",
+    "CardSubType": "None",
+    "Sphere": "Hearth",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "1"
+      },
+      "Traits": [
+        "Condition."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Attach to a location. Attached location gets -1 Threat."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 44,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Surge of Courage",
+    "Slug": "Surge-of-Courage-LB",
+    "IsUnique": false,
+    "CardType": "Attachment",
+    "CardSubType": "None",
+    "Sphere": "Hearth",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "2"
+      },
+      "Traits": [
+        "Condition."
+      ],
+      "Keywords": [],
+      "Text": [
+        "Attach to a hero.",
+        "Action: Exhaust Surge of Courage to ready attached hero."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 45,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Blessing of the Hearth",
+    "Slug": "Blessing-of-the-Hearth-LB",
+    "IsUnique": false,
+    "CardType": "Event",
+    "CardSubType": "None",
+    "Sphere": "Hearth",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "3"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Action: Reduce your dread by 6."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 46,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Unbowed Spirit",
+    "Slug": "Unbowed-Spirit-LB",
+    "IsUnique": false,
+    "CardType": "Event",
+    "CardSubType": "None",
+    "Sphere": "Hearth",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "0"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Response: After you travel to a location, exhaust a Hearth character to place 2 progress on that location."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 47,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Quick Parry",
+    "Slug": "Quick-Parry-LB",
+    "IsUnique": false,
+    "CardType": "Event",
+    "CardSubType": "None",
+    "Sphere": "Hearth",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "1"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Response: Cancel a shadow effect just triggered during combat."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 48,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Rekindled Hope",
+    "Slug": "Rekindled-Hope-LB",
+    "IsUnique": false,
+    "CardType": "Event",
+    "CardSubType": "None",
+    "Sphere": "Hearth",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "1"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Action: Shuffle your discard pile back into your deck. Remove Rekindled Hope from the game."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 49,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Steel the Heart",
+    "Slug": "Steel-the-Heart-LB",
+    "IsUnique": false,
+    "CardType": "Event",
+    "CardSubType": "None",
+    "Sphere": "Hearth",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "1"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Response: Cancel the 'when revealed' effects of a card just revealed from the encounter deck."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 50,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Answer the Call",
+    "Slug": "Answer-the-Call-LB",
+    "IsUnique": false,
+    "CardType": "Event",
+    "CardSubType": "None",
+    "Sphere": "Hearth",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "X"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Action: Choose an ally with a printed cost of X in your discard pile and put it into play. (It can be from any sphere.)"
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 51,
+    "Quantity": 3,
+    "Artist": null
+  },
+  {
+    "Title": "Warding Light",
+    "Slug": "Warding-Light-LB",
+    "IsUnique": false,
+    "CardType": "Event",
+    "CardSubType": "None",
+    "Sphere": "Hearth",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "2"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Action: Choose an enemy engaged with you. Return it to the staging area."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 52,
+    "Quantity": 2,
+    "Artist": null
+  },
+  {
+    "Title": "Honored Memory",
+    "Slug": "Honored-Memory-LB",
+    "IsUnique": false,
+    "CardType": "Event",
+    "CardSubType": "None",
+    "Sphere": "Hearth",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "1"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Action: Return a Hearth card from your discard pile to your hand."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 53,
+    "Quantity": 1,
+    "Artist": null
+  },
+  {
+    "Title": "Twist of Fate",
+    "Slug": "Twist-of-Fate-LB",
+    "IsUnique": false,
+    "CardType": "Event",
+    "CardSubType": "None",
+    "Sphere": "Hearth",
+    "Front": {
+      "Subtitle": null,
+      "ImagePath": null,
+      "Stats": {
+        "ResourceCost": "5"
+      },
+      "Traits": [],
+      "Keywords": [],
+      "Text": [
+        "Action: Choose a hero in your discard pile and put it into play."
+      ],
+      "Shadow": null,
+      "FlavorText": null
+    },
+    "Back": null,
+    "CardSet": "Lanternbearers",
+    "EncounterInfo": null,
+    "Number": 54,
+    "Quantity": 1,
+    "Artist": null
+  }
+]
